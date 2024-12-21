@@ -6,6 +6,7 @@ import SignupPage from './Pages/SigupPage'
 import HomePage from './Pages/HomePage'
 import ForgetPassword from './Pages/ForgotPassword'
 import VerifyCode from './Pages/VerifyCode'
+import ResetPassword from './Pages/Reset-Password'
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path='/' element={<HomePage />} />
         <Route path='/forgot-password' element={<ForgetPassword />} />
         <Route path='/verify-code' element={<VerifyCode />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
       </Routes>
     </Router>
   )
