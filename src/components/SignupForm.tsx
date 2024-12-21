@@ -3,6 +3,8 @@ import { useForm, SubmitHandler, } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const schema = z.object({
     studentId: z.string().min(10, "Student's Id must be 10 characters long"),
@@ -20,6 +22,9 @@ type signupFormInputs = z.infer<typeof schema>;
 
 
 const SignUpForm: React.FC = () => {
+
+    const navigate = useNavigate()
+
     const {
         register, handleSubmit, formState: { errors }
     } = useForm<signupFormInputs>({ resolver: zodResolver(schema) })
@@ -29,8 +34,11 @@ const SignUpForm: React.FC = () => {
     const onSubmit: SubmitHandler<signupFormInputs> = async (data) => {
         try {
             const response = await axios.post('http://localhost:3000/student/register', data)
-            console.log(response.data)
+            localStorage.setItem('token', response.data.token)
+            console.log(localStorage.getItem('token'))
             alert("Student added successfully")
+            navigate("/")
+
         } catch (error) {
             console.error(error);
             alert("SignUpfailed");
