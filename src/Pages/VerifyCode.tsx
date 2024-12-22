@@ -3,7 +3,7 @@ import Verifycode from '../components/Verify-code'
 const VerifyCode = () => {
   return (
     <div>
-      <Verifycode/>
+      <Verifycode />
     </div>
   )
 }

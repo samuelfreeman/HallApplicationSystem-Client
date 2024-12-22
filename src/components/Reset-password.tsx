@@ -35,7 +35,7 @@ const Resetpass: React.FC = () => {
         return;
       }
 
-      const response = await axios.post('http://localhost:3000/student/reset-password', {
+      const response = await axios.post('https://7fpx3vt6-3000.euw.devtunnels.ms/student/reset-password', {
         email,
         password: data.password,
       });

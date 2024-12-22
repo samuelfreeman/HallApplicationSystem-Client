@@ -28,7 +28,7 @@ const VerifyCode: React.FC = () => {
             }
             
      
-            const response = await axios.post('http://localhost:3000/student/verify-code', data);
+            const response = await axios.post('https://7fpx3vt6-3000.euw.devtunnels.ms/student/verify-code', data);
             console.log(response.data);
             alert('Verification Successful');
             navigate('/reset-password'); // Redirect to home

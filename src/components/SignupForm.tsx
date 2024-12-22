@@ -33,7 +33,7 @@ const SignUpForm: React.FC = () => {
 
     const onSubmit: SubmitHandler<signupFormInputs> = async (data) => {
         try {
-            const response = await axios.post('http://localhost:3000/student/register', data)
+            const response = await axios.post('https://7fpx3vt6-3000.euw.devtunnels.ms/student/register', data)
             localStorage.setItem('token', response.data.token)
             console.log(localStorage.getItem('token'))
             alert("Student added successfully")

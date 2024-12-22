@@ -23,7 +23,7 @@ const LoginForm: React.FC = () => {
 
     const onSubmit: SubmitHandler<LoginFormInputs> = async (data) => {
         try {
-            const response = await axios.post('http://localhost:3000/auth/student/login', data)
+            const response = await axios.post('https://7fpx3vt6-3000.euw.devtunnels.ms/auth/student/login', data)
             console.log(response.data)
             localStorage.setItem('token', response.data)
             alert("Login Successful")
