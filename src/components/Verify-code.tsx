@@ -37,7 +37,7 @@ const VerifyCode: React.FC = () => {
             alert('Verification failed.');
         }
     };
-    const inputStyles = {
+    const inputStyles: React.CSSProperties = {
         width: '3rem', // Width of each input box
         height: '3rem', // Height of each input box
         fontSize: '1.25rem', // Font size for text

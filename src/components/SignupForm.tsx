@@ -149,7 +149,7 @@ const SignUpForm: React.FC = () => {
                 </div>
 
                 {/* Disabled Checkbox */}
-                <div className='block col-span-2'>
+                <div className='block lg:col-span-2'>
                     <input
                         id="disabled"
                         type="checkbox"
