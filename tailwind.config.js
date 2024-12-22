@@ -1,4 +1,5 @@
-
+// tailwind.config.js
+import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -10,7 +11,6 @@ export default {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    
+    forms, // Import the plugin using ES module syntax
   ],
-}
+};
