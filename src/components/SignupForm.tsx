@@ -2,46 +2,33 @@ import React from "react";
 import { useForm, SubmitHandler, } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
+import { useAppDispatch, useAppSelector } from "../state/hooks";
+import { signUp } from "../api/student/thunk";
 import { useNavigate } from "react-router-dom";
+import { SignUpInput, signUpSchema } from "../validations/authValidation";
 
 
-const schema = z.object({
-    studentId: z.string().min(10, "Student's Id must be 10 characters long"),
-    fullName: z.string().min(5, "Student's Fullname must be atleast 5 characters long"),
-    email: z.string().email("Invalid email address"),
-    password: z.string().min(8, "Password must be atleast 8 characters long"),
-    gender: z.string().max(6),
-    level: z.number().min(2, "level of student must be 3 characters long"),
-    disabled: z.boolean(),
-    telephone: z.string(),
-    department: z.string(),
-})
-
-type signupFormInputs = z.infer<typeof schema>;
 
 
 const SignUpForm: React.FC = () => {
 
-    const navigate = useNavigate()
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const { loading, error } = useAppSelector((state) => state.student)
+
+
 
     const {
         register, handleSubmit, formState: { errors }
-    } = useForm<signupFormInputs>({ resolver: zodResolver(schema) })
+    } = useForm<SignUpInput>({ resolver: zodResolver(signUpSchema) })
 
 
 
-    const onSubmit: SubmitHandler<signupFormInputs> = async (data) => {
-        try {
-            const response = await axios.post('https://7fpx3vt6-3000.euw.devtunnels.ms/student/register', data)
-            localStorage.setItem('token', response.data.token)
-            console.log(localStorage.getItem('token'))
-            alert("Student added successfully")
-            navigate("/")
+    const onSubmit: SubmitHandler<SignUpInput> = async (data) => {
+        const result = await dispatch(signUp(data))
+        if (signUp.fulfilled.match(result)) {
 
-        } catch (error) {
-            console.error(error);
-            alert("SignUpfailed");
+            navigate("/home")
         }
     }
 
@@ -50,7 +37,7 @@ const SignUpForm: React.FC = () => {
         <form onSubmit={handleSubmit(onSubmit)} className='prose border-2 border-black rounded-md w-[700px] p-10 '>
 
             <h1 className='text-center pb-4 -pt-6 text-2xl'>Sign Up Form</h1>
-
+            {error && <p className="error">{error}</p>}
             <div className="grid  gap-6 gap-x-10">
                 {/* Student ID */}
                 <div className='block'>
@@ -163,10 +150,11 @@ const SignUpForm: React.FC = () => {
             <p className="block  ">Already have an account ? <a className='underline underline-offset-1' href="/login">login</a></p>
             {/* Submit Button */}
             <button
+                disabled={loading}
                 type="submit"
                 className='p-2 mt-6 bg-black text-white rounded-md w-full hover:bg-white hover:text-black border-2 border-black'
             >
-                SignUp
+                {loading ? "Signing up ..." : "SignUp"}
             </button>
         </form>
 
