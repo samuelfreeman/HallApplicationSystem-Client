@@ -3,17 +3,17 @@ import { Typewriter } from 'react-simple-typewriter'
 import { Button } from '../../components/ui/button'
 const Hero = () => {
     return (
-        <div className='w-full h-[80vh] mb-28  '>
+        <div className='w-full h-[80vh]   '>
             <div className="relative  bg-cover bg-center h-full" style={{ backgroundImage: "url('/autonomypic.jpg')" }}>
                 {/* Black Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-50 w-full"></div>
                 {/* Content */}
-                <div className="relative z-10 flex flex-col pr-14  text-white gap-7 pl-20 ">
+                <div className="relative z-10 flex flex-col pr-14  text-red-600 gap-7 pl-20 ">
                     <h1 className='pt-20  max-w-[800px] pl-[5px] lg:pl-[20px] h-[20px]' >
 
 
 
-                        <span style={{ color: 'White', fontWeight: 'bold' }} className='text-4xl lg:text-6xl  w-5  '>
+                        <span style={{ color: 'white', fontWeight: 'bold' }} className='text-4xl lg:text-6xl  w-5  '>
                             {/* Style will be inherited from the parent element */}
                             <Typewriter
                                 words={['Welcome to Seamless Hall Living', 'Find Your Perfect Room.', 'Hassle-Free Registration.', 'Book. Pay. Stay.']}
