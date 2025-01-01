@@ -3,6 +3,10 @@ import Navbar from "../component/Navbar";
 import Hero from "../component/Hero";
 import About from "../component/About";
 import HIW from "../component/HIW";
+import ContactUs from "../component/ContactUs";
+import Testimonials from "../component/Testimonials";
+import FAQ from "../component/FAQ";
+import Footer from "../component/Footer";
 const HomePage = () => {
 
 
@@ -15,6 +19,10 @@ const HomePage = () => {
       <About />
       <HIW/>
       <Toaster />
+      <Testimonials/>
+      <FAQ/>
+      <ContactUs/>
+      <Footer/>
     </div>
   );
 };

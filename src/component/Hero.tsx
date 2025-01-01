@@ -3,13 +3,13 @@ import { Typewriter } from 'react-simple-typewriter'
 import { Button } from '../../components/ui/button'
 const Hero = () => {
     return (
-        <div className='w-full h-[80vh]   '>
-            <div className="relative  bg-cover bg-center h-full" style={{ backgroundImage: "url('/autonomypic.jpg')" }}>
+        <div className='w-full h-[30vh]   mt-20 lg:mb-52'>
+            <div className="relative  bg-cover bg-center pb-16 " style={{ backgroundImage: "url('/autonomypic.jpg')" }}>
                 {/* Black Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-85 w-full"></div>
                 {/* Content */}
-                <div className="relative z-10 flex flex-col pr-14  text-white gap-7  pl-20 ">
-                    <h1 className='pt-8  max-w-[800px] pl-[5px] lg:pl-[20px] h-[20px]' >
+                <div className="relative z-10 flex flex-col pr-14  text-white gap-7  pl-10 lg:pl-20 ">
+                    <h1 className='pt-8 pr-20  max-w-44 lg:max-w-[800px]  lg:pl-[20px] h-[20px]' >
 
 
 
@@ -27,16 +27,13 @@ const Hero = () => {
                         </span>
                     </h1>
 
-<h1 className='pt-44'>Delivering Excellence Through Simplicity</h1>
-                    <div className="flex  space-x-2  justify-end lg:pr-20 lg:pt-56   pl-10  ">
-                        <Button className="px-6 pt-10  outline outline-1  hover:bg-white hover:text-black text-white font-semibold rounded-lg">
-                            Get Started
-                        </Button>
-                        <Button className="lg:px-6 px-10   bg-white hover:text-white hover:bg-transparent hover:outline hover:outline-1    rounded-lg ">
-                            Learn More
-                        </Button>
-                    </div>
+                    <h1 className='pt-44 '>Delivering Excellence Through Simplicity</h1>
                 </div>
+                    <div className=" relative flex  space-x-2  mt-6 justify-end lg:pr-20 lg:pt-10  ml-10 mr-10  ">
+                     <Button className='text-white outline-1 outline'> Get Started</Button>
+                     <Button className='text-black bg-white'> Learn More</Button>
+                    </div>
+                
             </div>
 
         </div>
