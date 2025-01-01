@@ -6,10 +6,10 @@ const Hero = () => {
         <div className='w-full h-[80vh]   '>
             <div className="relative  bg-cover bg-center h-full" style={{ backgroundImage: "url('/autonomypic.jpg')" }}>
                 {/* Black Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-50 w-full"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-85 w-full"></div>
                 {/* Content */}
-                <div className="relative z-10 flex flex-col pr-14  text-red-600 gap-7 pl-20 ">
-                    <h1 className='pt-20  max-w-[800px] pl-[5px] lg:pl-[20px] h-[20px]' >
+                <div className="relative z-10 flex flex-col pr-14  text-white gap-7  pl-20 ">
+                    <h1 className='pt-8  max-w-[800px] pl-[5px] lg:pl-[20px] h-[20px]' >
 
 
 
@@ -27,14 +27,14 @@ const Hero = () => {
                         </span>
                     </h1>
 
-
-                    <div className="flex  space-x-2  justify-end lg:pr-20 lg:pt-56 pt-48  pl-10  ">
-                        <button className="px-6 py-3 outline outline-1  hover:bg-white hover:text-black text-white font-semibold rounded-lg">
+<h1 className='pt-44'>Delivering Excellence Through Simplicity</h1>
+                    <div className="flex  space-x-2  justify-end lg:pr-20 lg:pt-56   pl-10  ">
+                        <Button className="px-6 pt-10  outline outline-1  hover:bg-white hover:text-black text-white font-semibold rounded-lg">
                             Get Started
-                        </button>
-                        <button className="lg:px-6 px-10 lg:py-3     bg-white hover:text-white hover:bg-transparent hover:outline hover:outline-1 text-black font-semibold  rounded-lg ">
+                        </Button>
+                        <Button className="lg:px-6 px-10   bg-white hover:text-white hover:bg-transparent hover:outline hover:outline-1    rounded-lg ">
                             Learn More
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>
