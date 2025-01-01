@@ -15,15 +15,14 @@ export const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const authToken = localStorage.getItem("authToken");
-    console.log(authToken);
+    const authToken = localStorage.getItem("token");
     if (authToken) {
       config.headers.Authorization = `Bearer ${authToken}`;
     }
     return config;
   },
-  (error) => {
-    console.log(error.message);
-    return Promise.reject(error);
-  }
+ async (error) => {
+  console.log(error)
+    return await Promise.reject(error);
+  } 
 );

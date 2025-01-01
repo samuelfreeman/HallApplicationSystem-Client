@@ -7,9 +7,6 @@ import { signUp } from "../api/student/thunk";
 import { useNavigate } from "react-router-dom";
 import { SignUpInput, signUpSchema } from "../validations/authValidation";
 
-
-
-
 const SignUpForm: React.FC = () => {
 
     const dispatch = useAppDispatch();
@@ -28,7 +25,7 @@ const SignUpForm: React.FC = () => {
         const result = await dispatch(signUp(data))
         if (signUp.fulfilled.match(result)) {
 
-            navigate("/home")
+            navigate("/")
         }
     }
 

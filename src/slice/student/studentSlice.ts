@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Student } from "../../types/student";
 import { login, signUp } from "../../api/student/thunk";
+import { decodeToken } from "../../utils/decode";
+import toast from 'react-hot-toast'
 
 // Define the auth state
 interface AuthState {
@@ -11,7 +13,7 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  student: JSON.parse(localStorage.getItem("student") || "null"),
+  student: decodeToken(localStorage.getItem("token") || "null") || null,
   token: localStorage.getItem("token"),
   loading: false,
   error: null,
@@ -25,6 +27,8 @@ const saveToLocalStorage = (key: string, value: any) => {
 const removeFromLocalStorage = (key: string) => {
   localStorage.removeItem(key);
 };
+
+
 
 // Create the slice
 const studentSlice = createSlice({
@@ -47,12 +51,14 @@ const studentSlice = createSlice({
       })
       .addCase(
         login.fulfilled,
-        (state, action: PayloadAction<{ student: Student; token: string }>) => {
+        (state, action: PayloadAction<{ student: Student, token: string }>) => {
           state.loading = false;
-          state.student = action.payload.student;
+          state.student = action.payload.student
           state.token = action.payload.token;
+
           saveToLocalStorage("student", action.payload.student);
           saveToLocalStorage("token", action.payload.token);
+          
         }
       )
       .addCase(login.rejected, (state, action: PayloadAction<any>) => {
@@ -71,9 +77,7 @@ const studentSlice = createSlice({
         (state, action: PayloadAction<{ student: Student; token: string }>) => {
           state.loading = false;
           state.student = action.payload.student;
-          state.token = action.payload.token;
           saveToLocalStorage("student", action.payload.student);
-          saveToLocalStorage("token", action.payload.token);
         }
       )
       .addCase(signUp.rejected, (state, action: PayloadAction<any>) => {

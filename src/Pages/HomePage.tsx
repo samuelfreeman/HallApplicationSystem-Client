@@ -1,12 +1,18 @@
-
+import { Toaster } from "react-hot-toast";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import About from "../components/About";
 const HomePage = () => {
 
 
 
 
   return (
-    <div className="w-full h-screen bg-black flex justify-center items-center">
-      <h1 className="text-white">Hall Management App coming soon!</h1>
+    <div className=" w-screen ">
+      <Navbar />
+      <Hero />
+      <About/>
+      <Toaster />
     </div>
   );
 };
