@@ -1,61 +1,89 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "../../components/ui/button";
+import { useForm, SubmitHandler } from "react-hook-form"
+import { useAppDispatch, useAppSelector } from "../state/hooks";
+import { ContactUsInput, contactUsSchema } from "../validations/ContactUs";
 
-const ContactUs: React.FC = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+import { contactUs } from "../api/contactus/thunk";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Your message has been sent!");
-    setForm({ name: "", email: "", message: "" });
-  };
+const ContactUsForm: React.FC = () => {
+
+  const dispatch = useAppDispatch();
+  const { loading, error } = useAppSelector((state) => state.feedback);
+
+  const {
+    register, handleSubmit, formState: { errors },
+  } = useForm<ContactUsInput>({ resolver: zodResolver(contactUsSchema) })
+
+
+  const onSubmit: SubmitHandler<ContactUsInput> = async (data) => {
+    const result = await dispatch(contactUs(data))
+    if (contactUs.fulfilled.match(result)) {
+      alert("Message sent successfully")
+
+    }
+  }
+
+
+
+
+  // const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   setForm({ ...form, [e.target.name]: e.target.value });
+  // };
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   alert("Your message has been sent!");
+  //   setForm({ name: "", email: "", message: "" });
+  // };
 
   return (
     <section className="bg-gray-100 py-12 px-6">
       <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
+      {error && <p className="error">{error}</p>}
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md"
       >
         <input
           type="text"
-          name="name"
-          value={form.name}
           placeholder="Your Name"
-          onChange={handleChange}
+          {...register("name")}
           required
           className="w-full border border-gray-300 rounded-lg p-3 mb-4"
         />
+        {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         <input
           type="email"
-          name="email"
-          value={form.email}
-          placeholder="Your Email"
-          onChange={handleChange}
+          placeholder="Enter Your Valid Email Address"
+          {...register("email")}
           required
           className="w-full border border-gray-300 rounded-lg p-3 mb-4"
         />
+        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
         <textarea
-          name="message"
-          value={form.message}
+
+
           placeholder="Your Message"
-          onChange={handleChange}
+          {...register("message")}
           required
           className="w-full border border-gray-300 rounded-lg p-3 mb-4"
         />
+        {errors.message && <p className="text-red-500">{errors.message.message}</p>}
         <Button
           type="submit"
+          disabled={loading}
           className="w-full bg-black text-white py-3 rounded-lg hover:bg-slate-950 "
         >
-          Send Message
+          {loading ? "Sending message ..." : "Send Message"}
         </Button>
       </form>
     </section>
   );
 };
 
-export default ContactUs;
+export default ContactUsForm;

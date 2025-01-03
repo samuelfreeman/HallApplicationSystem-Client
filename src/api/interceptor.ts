@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://hallapplicationsystem.onrender.com/",
+  baseURL: "http://localhost:3000/",
   timeout: 100000,
   headers: {
     "Content-Type": "application/json",

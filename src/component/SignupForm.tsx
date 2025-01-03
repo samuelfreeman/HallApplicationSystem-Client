@@ -61,6 +61,7 @@ const SignUpForm: React.FC = () => {
                         <input
                             id="studentId"
                             type="number"
+                            placeholder="Enter your studentId "
                             className="mt-0 block w-full  rounded-md  px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                             {...register('studentId')}
                         />
@@ -116,15 +117,39 @@ const SignUpForm: React.FC = () => {
                     </div>
 
                     {/* Gender */}
-                    <div className='block'>
-                        <label htmlFor="gender" className='text-black'>Gender:</label>
-                        <input
-                            id="gender"
-                            type="text"
-                            className="mt-0 block w-full px-0.5 rounded-md   border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('gender')}
-                        />
-                        {errors.gender && <p className='text-red-600 text-sm'>{errors.gender.message}</p>}
+
+                    {/* Gender */}
+                    <div className="block">
+                        <label htmlFor="gender" className="text-black">
+                            Gender:
+                        </label>
+                        <div className="flex gap-4 mt-2">
+                            <label className="flex items-center">
+                                <input
+                                    id="gender-male"
+                                    type="radio"
+                                    value="Male"
+                                    className="mr-2"
+                                    {...register("gender")}
+                                />
+                                Male
+                            </label>
+                            <label className="flex items-center">
+                                <input
+                                    id="gender-female"
+                                    type="radio"
+                                    value="Female"
+                                    className="mr-2"
+                                    {...register("gender")}
+                                />
+                                Female
+                            </label>
+                        </div>
+                        {errors.gender && (
+                            <p className="text-red-600 text-sm">
+                                {errors.gender.message}
+                            </p>
+                        )}
                     </div>
 
                     {/* Level */}
@@ -176,13 +201,13 @@ const SignUpForm: React.FC = () => {
 
 
 
-                <div className="  max-w-[700px]">
+                <div className="  max-w-[800px]">
 
                     <form
                         onSubmit={handleSubmit(onSubmit)}
-                        className="prose bg-white  border-black rounded-md max-w-[700px] p-10"
+                        className="prose bg-white  border-black rounded-md max-w-[900px] p-10 px-20"
                     >
-                        <h1 className="text-center pb-5 -pt-6 text-5xl font-sans  text-black">
+                        <h1 className="text-center pb-5 -pt-6 text-4xl font-sans  text-black">
                             Sign Up
                         </h1>
                         {error && <p className="error">{error}</p>}
@@ -303,18 +328,38 @@ const SignUpForm: React.FC = () => {
                                     <label htmlFor="gender" className="text-black">
                                         Gender:
                                     </label>
-                                    <input
-                                        id="gender"
-                                        type="text"
-                                        className="mt-0 block w-full px-0.5 rounded-md border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register("gender")}
-                                    />
+                                    <div className="flex gap-4 mt-2">
+                                        <label className="flex items-center">
+                                            <input
+                                                id="gender-male"
+                                                type="radio"
+                                                value="Male"
+                                                className="mr-2"
+                                                {...register("gender")}
+                                            />
+                                            Male
+                                        </label>
+                                        <label className="flex items-center">
+                                            <input
+                                                id="gender-female"
+                                                type="radio"
+                                                value="Female"
+                                                className="mr-2"
+                                                {...register("gender")}
+                                            />
+                                            Female
+                                        </label>
+                                    </div>
                                     {errors.gender && (
                                         <p className="text-red-600 text-sm">
                                             {errors.gender.message}
                                         </p>
                                     )}
                                 </div>
+
+
+
+
                                 {/* Department */}
                                 <div className='block'>
                                     <label htmlFor="department" className='text-black'>Department:</label>
