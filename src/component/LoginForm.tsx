@@ -44,8 +44,8 @@ const LoginForm: React.FC = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit(onSubmit)} className="form-container prose border-2 border-black rounded-md grid grid-cols-1 gap-6 w-[410px] h-auto p-10">
-                <h1 className="text-center pb-3 text-2xl">Login</h1>
+            <form onSubmit={handleSubmit(onSubmit)} className="form-container prose bg-white border-2 lg:border-black rounded-md grid grid-cols-1 gap-6 w-[410px] h-auto p-10">
+                <h1 className="text-center pb-3 text-5xl font-sans">Login</h1>
 
                 {error && <p className="error text-red-600">{error}</p>}
 
@@ -74,7 +74,7 @@ const LoginForm: React.FC = () => {
                 <p>Do not have an account? <a className="underline underline-offset-1" href="/signup">SignUp</a></p>
                 <p className="text-right underline"><a href="/forgot-password">Forgot password?</a></p>
 
-                <button type="submit" disabled={loading} className="p-2 bg-black text-white rounded-md hover:bg-white hover:text-black border-2 border-black mb-2">
+                <button type="submit" disabled={loading} className="p-2 bg-[#740938] text-white rounded-md hover:bg-white hover:text-black border-2  lg:border-black mb-2">
                     {loading ? "Logging in..." : "Login"}
                 </button>
             </form>

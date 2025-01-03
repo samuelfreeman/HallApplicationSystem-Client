@@ -9,7 +9,10 @@ import VerifyCode from './Pages/VerifyCode'
 import ResetPassword from './Pages/Reset-Password'
 
 const App: React.FC = () => {
+
+
   return (
+    
     <Router>
 
       <Routes>

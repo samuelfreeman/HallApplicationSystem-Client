@@ -38,7 +38,7 @@ const ForgotPassword: React.FC = () => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='prose border-2 border-black  rounded-md grid grid-cols-1 gap-6  w-[410px] h-auto p-10'>
+        <form onSubmit={handleSubmit(onSubmit)} className='prose border-2  bg-white rounded-md grid grid-cols-1 gap-6  w-[410px] h-auto p-10'>
 
             <h1 className='text-center pb-3 text-2xl'>Verify Your Email </h1>
 
@@ -56,7 +56,7 @@ const ForgotPassword: React.FC = () => {
             <p>Back to login? <a className='underline underline-offset-1' href="/login">Login</a></p>
 
 
-            <button type="submit" className='p-2  bg-black text-white rounded-md hover:bg-white hover:text-black  border-2 border-black mb-2 '>Verify</button>
+            <button type="submit" className='p-2  bg-[#740938] text-white rounded-md hover:bg-white hover:text-black  border-2 hover:border-black mb-2 '>Verify</button>
         </form>
     )
 }
