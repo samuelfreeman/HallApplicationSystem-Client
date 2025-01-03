@@ -81,7 +81,7 @@ const studentSlice = createSlice({
         (state, action: PayloadAction<{ student: Student; token: string }>) => {
           state.loading = false;
           state.student = action.payload.student;
-          saveToLocalStorage("student", action.payload.student);
+          saveToLocalStorage("student", action.payload);
         }
       )
       .addCase(signUp.rejected, (state, action: PayloadAction<any>) => {

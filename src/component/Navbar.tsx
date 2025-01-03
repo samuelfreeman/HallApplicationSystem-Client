@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
     };
 
     useEffect(() => {
-        const token = localStorage.getItem("token")
+        
         const student = localStorage.getItem("student")
         if (student) {
             setShowUp(false);
