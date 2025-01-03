@@ -27,20 +27,6 @@ const ContactUsForm: React.FC = () => {
   }
 
 
-
-
-  // const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  // };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   alert("Your message has been sent!");
-  //   setForm({ name: "", email: "", message: "" });
-  // };
-
   return (
     <section className="bg-gray-100 py-12 px-6">
       <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
