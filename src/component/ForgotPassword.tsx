@@ -23,7 +23,7 @@ const ForgotPassword: React.FC = () => {
 
     const onSubmit: SubmitHandler<ForgotPasswordInputs> = async (data) => {
         try {
-            const response = await axios.post('https://7fpx3vt6-3000.euw.devtunnels.ms/student/forgot-password', data)
+            const response = await axios.post('https://hallapplicationsystem.onrender.com/student/forgot-password', data)
             console.log(response.data.accepted[0])
             localStorage.setItem('email',response.data.accepted[0])
 

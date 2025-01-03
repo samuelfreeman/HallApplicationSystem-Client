@@ -30,16 +30,17 @@ const SignUpForm: React.FC = () => {
     const previousStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
 
     return (
+        <>
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className="prose bg-white  border-black rounded-md w-[700px] p-10"
+            className="prose bg-white hidden lg:grid border-black rounded-md w-[700px] p-10"
         >
             <h1 className="text-center pb-5 -pt-6 text-5xl font-sans  text-black">
                 Sign Up
             </h1>
             {error && <p className="error">{error}</p>}
 {/* this should only show for large screens and hide for small screen */}
-            <div className=" hidden lg:grid  gap-6 gap-x-10">
+            <div className=" grid  gap-6 gap-x-10">
                 {/* Student ID */}
                 <div className='block'>
                     <label htmlFor="studentId" className='text-black'>Student ID:</label>
@@ -157,9 +158,18 @@ const SignUpForm: React.FC = () => {
                 {loading ? "Signing up ..." : "SignUp"}
             </button>
                 </div>
-
+                </form>
 {/* and this to hide for large screens */}
+<form
+            onSubmit={handleSubmit(onSubmit)}
+            className="prose bg-white lg:hidden border-black rounded-md w-[700px] p-10"
+        >
+            <h1 className="text-center pb-5 -pt-6 text-5xl font-sans  text-black">
+                Sign Up
+            </h1>
+            {error && <p className="error">{error}</p>}
             {currentStep === 1 && (
+                
                 <div className="lg:hidden  grid gap-6 gap-x-10">
                     {/* Student ID */}
                     <div className="block">
@@ -301,8 +311,11 @@ const SignUpForm: React.FC = () => {
                     </div>
                 </div>
             )}
-        </form>
+            </form>
+        
+        </>
     );
+    
 };
 
 export default SignUpForm;
