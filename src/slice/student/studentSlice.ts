@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Student } from "../../types/student";
 import { login, signUp } from "../../api/student/thunk";
 import { decodeToken } from "../../utils/decode";
-import toast from 'react-hot-toast'
+
 
 // Define the auth state
 interface AuthState {
@@ -12,8 +12,12 @@ interface AuthState {
   error: string | null;
 }
 
+
+
+
+
 const initialState: AuthState = {
-  student: decodeToken(localStorage.getItem("token") || "null") || null,
+  student: decodeToken(localStorage.getItem("token") || "token") ,
   token: localStorage.getItem("token"),
   loading: false,
   error: null,

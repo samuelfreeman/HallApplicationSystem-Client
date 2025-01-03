@@ -7,10 +7,11 @@ interface  DecodedToken extends Student {
 }
 
 export const decodeToken = (token: string): DecodedToken => {
+    console.log(token)
     try {
-        return jwtDecode<DecodedToken>(token);
+        return jwtDecode<DecodedToken >(token);
     } catch (error) {
-        console.error("Invalid token:", error);
+        
         return {} as DecodedToken;
     }
 };

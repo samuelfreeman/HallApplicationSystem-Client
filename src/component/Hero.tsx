@@ -1,9 +1,9 @@
-import React from 'react'
+
 import { Typewriter } from 'react-simple-typewriter'
 import { Button } from '../../components/ui/button'
 const Hero = () => {
     return (
-        <div className='w-full h-[30vh]   mt-20 lg:mb-52'>
+        <div className='w-full h-[30vh]   mt-16 lg:mb-52  mb-64'>
             <div className="relative  bg-cover bg-center pb-16 " style={{ backgroundImage: "url('/autonomypic.jpg')" }}>
                 {/* Black Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-85 w-full"></div>
