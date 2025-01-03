@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 import { Button } from '../../components/ui/button'
 const Hero = () => {
     return (
-        <div className='w-full h-[30vh]   mt-16 lg:mb-52  mb-64'>
+        <div className='w-full h-[30vh]   mt-16 lg:mb-52  mb-56'>
             <div className="relative  bg-cover bg-center pb-16 " style={{ backgroundImage: "url('/autonomypic.jpg')" }}>
                 {/* Black Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-85 w-full"></div>
@@ -30,8 +30,8 @@ const Hero = () => {
                     <h1 className='pt-44 '>Delivering Excellence Through Simplicity</h1>
                 </div>
                     <div className=" relative flex  space-x-2  mt-6 justify-end lg:pr-20 lg:pt-10  ml-10 mr-10  ">
-                     <Button className='text-white outline-1 outline'> Get Started</Button>
-                     <Button className='text-black bg-white'> Learn More</Button>
+                     <Button className='text-white outline-1 outline'> <a href="/commingsoon">Get Started</a></Button>
+                     <Button className='text-black bg-white'> <a href="#about">Learn More</a></Button>
                     </div>
                 
             </div>

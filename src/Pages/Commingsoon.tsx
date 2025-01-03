@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 const Commingsoon = () => {
   return (
     <div className="bg-black text-center h-screen flex items-center justify-center">
-            <h1 className='pb-10 pr-20  max-w-44 lg:max-w-[800px]  lg:pl-[20px] h-[20px]' >
+            <h1 className=' max-w-44 lg:max-w-[800px]  h-[20px]' >
 
 
 

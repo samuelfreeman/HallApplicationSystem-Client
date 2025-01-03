@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
 
 
                     <div className="flex items-center md:hidden">
-                        <button onClick={toggleMenu} className="text-gray-900 pt-6 hover:text-gray-700 focus:outline-none">
+                        <button onClick={toggleMenu} className="text-gray-900 pt-2 hover:text-gray-700 focus:outline-none">
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -86,10 +86,10 @@ const Navbar: React.FC = () => {
             {isOpen && (
                 <div className="md:hidden">
                     <div className="w-full flex flex-col items-center sm:px-3 p-4 space-y-2">
-                        <a href="#features" className="block text-gray-900 hover:text-gray-700">Request Room</a>
-                        <a href="#pricing" className="block text-gray-900 hover:text-gray-700">Payments</a>
-                        <a href="#contact" className="block text-gray-900 hover:text-gray-700">Announcements</a>
-                        <a href="#contact" className="block text-gray-900 hover:text-gray-700">Help/Support</a>
+                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Request Room</a>
+                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Payments</a>
+                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Announcements</a>
+                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Help/Support</a>
                         {
                             showRegister && (
                                 <Button className="mr-4 w-full bg-black text-white"><a href="/signup">Register</a></Button>)}
