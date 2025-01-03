@@ -9,7 +9,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-85 w-full"></div>
                 {/* Content */}
                 <div className="relative z-10 flex flex-col pr-14  text-white gap-7  pl-10 lg:pl-20 ">
-                    <h1 className='pt-8 pr-20  max-w-44 lg:max-w-[800px]  lg:pl-[20px] h-[20px]' >
+                    <h1 className='pt-8 pr-10  max-w-20 lg:max-w-[800px]  lg:pl-[20px] h-[20px]' >
 
 
 
