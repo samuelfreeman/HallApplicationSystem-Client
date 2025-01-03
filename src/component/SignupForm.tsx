@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch, useAppSelector } from "../state/hooks";
@@ -8,7 +8,17 @@ import { SignUpInput, signUpSchema } from "../validations/authValidation";
 
 const SignUpForm: React.FC = () => {
     const [currentStep, setCurrentStep] = useState(1); // State for current step
-    const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches; // Check if large screen
+    const [isLargeScreen, setIsLargeScreen] = useState(window.matchMedia("(min-width: 1024px)").matches);
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(min-width: 1024px)");
+        const handler = (e: MediaQueryListEvent) => setIsLargeScreen(e.matches);
+
+        // Add the event listener
+        mediaQuery.addEventListener("change", handler);
+
+        // Cleanup on unmount
+        return () => mediaQuery.removeEventListener("change", handler);
+    }, []); // Check if large screen
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
