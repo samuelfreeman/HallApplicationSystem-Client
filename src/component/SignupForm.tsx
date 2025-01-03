@@ -24,7 +24,7 @@ const SignUpForm: React.FC = () => {
         const result = await dispatch(signUp(data));
         console.log(result)
         if (signUp.fulfilled.match(result)) {
-            
+
             navigate("/");
         }
     };
@@ -304,6 +304,17 @@ const SignUpForm: React.FC = () => {
                                             {errors.gender.message}
                                         </p>
                                     )}
+                                </div>
+                                {/* Department */}
+                                <div className='block'>
+                                    <label htmlFor="department" className='text-black'>Department:</label>
+                                    <input
+                                        id="department"
+                                        type="text"
+                                        className="mt-0 block w-full px-0.5 rounded-md border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+                                        {...register('department')}
+                                    />
+                                    {errors.department && <p className='text-red-600 text-sm'>{errors.department.message}</p>}
                                 </div>
 
                                 <p className="block  ">Already have an account ? <a className='underline underline-offset-1' href="/login">login</a></p>
