@@ -7,9 +7,9 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  { name: "Kwame Doe", feedback: "The room allocation process was seamless!", image: "/images/john.jpg" },
-  { name: "Mike Asamoah", feedback: "Managing payments has never been easier.", image: "/images/jane.jpg" },
-  { name: "Alex Boateng", feedback: "A reliable system that saves time and stress.", image: "/images/alex.jpg" },
+  { name: "Kwame Doe", feedback: "The room allocation process was seamless!", image: "/user(1).png" },
+  { name: "Mike Asamoah", feedback: "Managing payments has never been easier.", image: "/user(1).png" },
+  { name: "Alex Boateng", feedback: "A reliable system that saves time and stress.", image: "/user(1).png" },
 ];
 
 const Testimonials: React.FC = () => {
@@ -40,7 +40,7 @@ const Testimonials: React.FC = () => {
                 <img
                   src={testimonial.image}
                   alt={`${testimonial.name}'s photo`}
-                  className="w-20 h-20 rounded-full mb-4"
+                  className="w-16 h-16 rounded-full mb-4"
                 />
                 <p className="italic text-gray-700">"{testimonial.feedback}"</p>
                 <h4 className="mt-4 font-semibold text-gray-800">- {testimonial.name}</h4>
