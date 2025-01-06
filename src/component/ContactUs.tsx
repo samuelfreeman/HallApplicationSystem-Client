@@ -1,28 +1,32 @@
 import React from "react";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useAppDispatch, useAppSelector } from "../state/hooks";
 import { ContactUsInput, contactUsSchema } from "../validations/ContactUs";
 
 import { contactUs } from "../api/contactus/thunk";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { useToast } from "@/hooks/use-toast";
 
 const ContactUsForm: React.FC = () => {
-
+  const { toast } = useToast()
   const dispatch = useAppDispatch();
   const { loading, error } = useAppSelector((state) => state.feedback);
 
   const {
-    register, handleSubmit, formState: { errors },
+    register, handleSubmit, formState: { errors }, reset
   } = useForm<ContactUsInput>({ resolver: zodResolver(contactUsSchema) })
 
 
   const onSubmit: SubmitHandler<ContactUsInput> = async (data) => {
     const result = await dispatch(contactUs(data))
     if (contactUs.fulfilled.match(result)) {
-      alert("Message sent successfully")
-
+      toast({
+        title: "Success",
+        description: "Message sent successfully",
+        duration: 2000,
+      })
+      reset()
     }
   }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '../../components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar: React.FC = () => {
     };
 
     useEffect(() => {
-        
+
         const student = localStorage.getItem("student")
         if (student) {
             setShowUp(false);
@@ -53,14 +54,14 @@ const Navbar: React.FC = () => {
                         showRegister && (
 
                             <div className="hidden md:flex items-center">
-                                <Button className="mr-4 w-full  bg-black text-white"><a href="/login">Register</a></Button>
+                                <Button className="mr-4 w-full  bg-black text-white"><NavLink to={"/signup"}>Register</NavLink></Button>
                             </div>
                         )
                     }       {
                         showLogin && (
 
                             <div className="hidden md:flex items-center">
-                                <Button className="mr-4 w-full px-6   bg-black text-white"><a href="/login">Login</a></Button>
+                                <Button className="mr-4 w-full px-6   bg-black text-white"><NavLink to={"/login"}>Login</NavLink></Button>
                             </div>
                         )
                     }
@@ -92,15 +93,15 @@ const Navbar: React.FC = () => {
                         <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Help/Support</a>
                         {
                             showRegister && (
-                                <Button className="mr-4 w-full bg-black text-white"><a href="/signup">Register</a></Button>)}
+                                <Button className="mr-4 w-full bg-black text-white"><Link to={"/signup"}>Register</Link></Button>)}
                         {
                             showLogin && (
 
-                                
-                                    <Button className="mr-4  w-full  bg-black text-white"><a href="/login">Login</a></Button>
-                                
+
+                                <Button className="mr-4  w-full  bg-black text-white"><Link to={"/login"}>Login</Link></Button>
+
                             )
-                        }   
+                        }
                         {
                             !showLogin && !showRegister && (
                                 <Button className="mr-4 w-full bg-black text-white" onClick={handleClick}>Logout</Button>)}

@@ -13,11 +13,10 @@ export const signUpSchema = z.object({
     fullName: z.string().min(5, "Student's Fullname must be atleast 5 characters long"),
     email: z.string().email("Invalid email address"),
     password: z.string().min(8, "Password must be atleast 8 characters long"),
-    gender: z.string().max(6),
+    gender: z.string().max(6).nonempty("Must have a value"),
     level: z.number().min(2, "level of student must be 3 characters long"),
-    disabled: z.boolean(),
-    telephone: z.string(),
-    department: z.string(),
+    telephone: z.string().min(10, "Phonenumber must be 10 characters long ").startsWith("0", "Phonenumber must start with 0"),
+    department: z.string().nonempty("This field must not be Empty"),
 })
 
 

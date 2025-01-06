@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch, useAppSelector } from "../state/hooks";
 import { signUp } from "../api/student/thunk";
 import { useNavigate } from "react-router-dom";
 import { SignUpInput, signUpSchema } from "../validations/authValidation";
+import { Button } from "@/components/ui/button"
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { useToast } from "@/hooks/use-toast"
+
 
 const SignUpForm: React.FC = () => {
-    const [currentStep, setCurrentStep] = useState(1); // State for current step
+    
     const [isLargeScreen, setIsLargeScreen] = useState(window.matchMedia("(min-width: 1024px)").matches);
     useEffect(() => {
         const mediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -21,392 +35,433 @@ const SignUpForm: React.FC = () => {
     }, []); // Check if large screen
 
     const dispatch = useAppDispatch();
+    const { toast } = useToast()
     const navigate = useNavigate();
     const { loading, error } = useAppSelector((state) => state.student);
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm<SignUpInput>({ resolver: zodResolver(signUpSchema) });
 
-    const onSubmit: SubmitHandler<SignUpInput> = async (data) => {
-        const result = await dispatch(signUp(data));
+
+
+    const form = useForm<SignUpInput>({
+        resolver: zodResolver(signUpSchema),
+
+        mode: "onTouched"
+    })
+    async function onSubmit(values: SignUpInput) {
+        const result = await dispatch(signUp(values));
         console.log(result)
         if (signUp.fulfilled.match(result)) {
-
+            toast({
+                description: "Student sucessfully signed up",
+                duration: 2000
+            })
             navigate("/");
+        } else {
+            console.log(error)
+            toast({
+                variant: "destructive",
+                description: error,
+            })
         }
-    };
+        // Do something with the form values.
+        // ✅ This will be type-safe and validated.
+        console.log(values)
+    }
 
+    // const onSubmit: SubmitHandler<SignUpInput> = async (data) => {
+    //     const result = await dispatch(signUp(data));
+    //     console.log(result)
+    //     if (signUp.fulfilled.match(result)) {
+
+    //         navigate("/");
+    //     }
+    // };
+    const { handleSubmit, control } = form;
     // Navigation handlers
-    const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 2));
-    const previousStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
+    
+    
 
     return (
         <>
-            {isLargeScreen ? (<form
-                onSubmit={handleSubmit(onSubmit)}
-                className="prose bg-white  lg:grid border-black rounded-md w-[700px] p-10"
-            >
-                <h1 className="text-center pb-5 -pt-6 text-5xl font-sans  text-black">
-                    Sign Up
-                </h1>
-                {error && <p className="error">{error}</p>}
-                {/* this should only show for large screens and hide for small screen */}
-                <div className=" grid  gap-6 gap-x-10">
-                    {/* Student ID */}
-                    <div className='block'>
-                        <label htmlFor="studentId" className='text-black'>Student ID:</label>
-                        <input
-                            id="studentId"
-                            type="number"
-                            placeholder="Enter your studentId "
-                            className="mt-0 block w-full  rounded-md  px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('studentId')}
-                        />
-                        {errors.studentId && <p className='text-red-600 text-sm'>{errors.studentId.message}</p>}
-                    </div>
+            {isLargeScreen ? (
+                <Form {...form}  >
 
-                    {/* Full Name */}
-                    <div className='block'>
-                        <label htmlFor="name" className='text-black'>Full Name:</label>
-                        <input
-                            id="name"
-                            type="text"
-                            className="mt-0 block w-full  rounded-md  px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('fullName')}
-                        />
-                        {errors.fullName && <p className='text-red-600 text-sm'>{errors.fullName.message}</p>}
-                    </div>
+                    <form onSubmit={handleSubmit(onSubmit)} className=" bg-[#740938] grid grid-cols-2 shadow-lg text-white rounded-lg m-5   ">
+                        <FormLabel className="flex  flex-col  items-center justify-center text-5xl ">
+                            <img src="/fav-3078db09.png" className="w-56 h-50" alt="" />
+                            <h1 className="pt-5 font-bold">Sign Up</h1></FormLabel>
+                        <div className=" grid grid-cols-2  p-10 gap-7 gap-x-10 ">
 
-                    {/* Email */}
-                    <div className='block'>
-                        <label htmlFor="email" className='text-black'>Email:</label>
-                        <input
-                            id="email"
-                            type="email"
-                            className="mt-0 block w-full  rounded-md  px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('email')}
-                        />
-                        {errors.email && <p className='text-red-600 text-sm'>{errors.email.message}</p>}
-                    </div>
 
-                    {/* Telephone */}
-                    <div className='block'>
-                        <label htmlFor="telephone" className='text-black'>Telephone:</label>
-                        <input
-                            id="telephone"
-                            type="text"
-                            className="mt-0 block w-full px-0.5 rounded-md   border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('telephone')}
-                        />
-                        {errors.telephone && <p className='text-red-600 text-sm'>{errors.telephone.message}</p>}
-                    </div>
+                            <FormField
+                                control={control}
+                                name="studentId"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>StudentID:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter a your valid studentID"  {...field} />
+                                        </FormControl>
+                                        <FormDescription className="w-72 text-gray-300">
+                                            Make sure your ID is a valid ID(eg:5221040000)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="fullName"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Username:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter a your fullname" {...field} />
+                                        </FormControl>
+                                        <FormDescription className="text-gray-300">
+                                            This is your public display name.
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Email:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your Valid Email" {...field} />
+                                        </FormControl>
+                                        <FormDescription className="w-72 text-gray-300">
+                                            Make sure your email is a valid email (eg:test@gmail.com)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="password"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Password:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter a your Password" {...field} />
+                                        </FormControl>
+                                        <FormDescription className="w-72 text-gray-300">
+                                            Make sure Your password is Strong and Contains At least 6 Characters(eg:Pass123@)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
 
-                    {/* Password */}
-                    <div className='block'>
-                        <label htmlFor="password" className='text-black'>Password:</label>
-                        <input
-                            id="password"
-                            type="password"
-                            className="mt-0 block w-full px-0.5  rounded-md  border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('password')}
-                        />
-                        {errors.password && <p className='text-red-600 text-sm'>{errors.password.message}</p>}
-                    </div>
+                            <FormField
+                                control={control}
+                                name="telephone"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>PhoneNumber:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your valid Tel" {...field} type="tel" />
+                                        </FormControl>
+                                        <FormDescription className="text-gray-300">
+                                            (eg:0512345678)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="gender"
+                                render={({ field }) => (
+                                    <FormItem className="space-y-3">
+                                        <FormLabel>Gender</FormLabel>
+                                        <FormControl>
+                                            <RadioGroup
+                                                onValueChange={field.onChange}
+                                                defaultValue={field.value}
+                                                className="flex flex-col space-y-1"
+                                            >
+                                                <FormItem className="flex items-center space-x-3 space-y-0">
+                                                    <FormControl>
+                                                        <RadioGroupItem value="male" className="bg-white" />
+                                                    </FormControl>
+                                                    <FormLabel className="font-normal">
+                                                        Male
+                                                    </FormLabel>
+                                                </FormItem>
+                                                <FormItem className="flex items-center space-x-3 space-y-0">
+                                                    <FormControl>
+                                                        <RadioGroupItem value="female" className="bg-white" />
+                                                    </FormControl>
+                                                    <FormLabel className="font-normal">
+                                                        Female
+                                                    </FormLabel>
+                                                </FormItem>
 
-                    {/* Gender */}
+                                            </RadioGroup>
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <Controller
+                                control={control}
+                                name="level"
 
-                    {/* Gender */}
-                    <div className="block">
-                        <label htmlFor="gender" className="text-black">
-                            Gender:
-                        </label>
-                        <div className="flex gap-4 mt-2">
-                            <label className="flex items-center">
-                                <input
-                                    id="gender-male"
-                                    type="radio"
-                                    value="Male"
-                                    className="mr-2"
-                                    {...register("gender")}
-                                />
-                                Male
-                            </label>
-                            <label className="flex items-center">
-                                <input
-                                    id="gender-female"
-                                    type="radio"
-                                    value="Female"
-                                    className="mr-2"
-                                    {...register("gender")}
-                                />
-                                Female
-                            </label>
+                                render={({ field: { value, onChange } }) => (
+                                    <FormItem>
+                                        <FormLabel>Level:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your level" type="number"
+                                                value={value}
+                                                onChange={(e) => onChange(Number(e.target.value))}
+                                            />
+                                        </FormControl>
+                                        
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="department"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Department:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your department name " {...field} type="text" />
+                                        </FormControl>
+                                        <FormDescription className="text-gray-300">
+                                            Deparment name can be in full or short form
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <Button type="submit" className="col-span-2 bg-white text-black hover:text-white">
+                                {loading ? "Signing up..." : "Signup"}
+                            </Button>
                         </div>
-                        {errors.gender && (
-                            <p className="text-red-600 text-sm">
-                                {errors.gender.message}
-                            </p>
-                        )}
-                    </div>
-
-                    {/* Level */}
-                    <div className='block'>
-                        <label htmlFor="level" className='text-black'>Level:</label>
-                        <input
-                            id="level"
-                            type="number"
-                            className="mt-0 block w-full px-0.5 border-0  rounded-md   border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('level', { valueAsNumber: true })}
-                        />
-                        {errors.level && <p className='text-red-600 text-sm'>{errors.level.message}</p>}
-                    </div>
-
-                    {/* Department */}
-                    <div className='block'>
-                        <label htmlFor="department" className='text-black'>Department:</label>
-                        <input
-                            id="department"
-                            type="text"
-                            className="mt-0 block w-full px-0.5 rounded-md border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                            {...register('department')}
-                        />
-                        {errors.department && <p className='text-red-600 text-sm'>{errors.department.message}</p>}
-                    </div>
-
-                    {/* Disabled Checkbox */}
-                    <div className='block lg:col-span-2'>
-                        <input
-                            id="disabled"
-                            type="checkbox"
-                            className="mr-2"
-                            {...register('disabled')}
-                        />
-                        <label htmlFor="disabled" className='text-gray-700'>Disabled</label>
-                    </div>
-
-                    <p className="block  ">Already have an account ? <a className='underline underline-offset-1' href="/login">login</a></p>
-                    {/* Submit Button */}
-                    <button
-                        disabled={loading}
-                        type="submit"
-                        className='p-2 mt-6 bg-[#740938] text-white rounded-md w-full hover:bg-white hover:text-black border-2 hover:border-black'
-                    >
-                        {loading ? "Signing up ..." : "SignUp"}
-                    </button>
-                </div>
-            </form>) : (
+                    </form>
+                </Form>
 
 
 
-                <div className="  max-w-[800px]">
+            ) : (
 
-                    <form
-                        onSubmit={handleSubmit(onSubmit)}
-                        className="prose bg-white  border-black rounded-md max-w-[900px] p-10 px-20"
-                    >
-                        <h1 className="text-center pb-5 -pt-6 text-4xl font-sans  text-black">
-                            Sign Up
-                        </h1>
-                        {error && <p className="error">{error}</p>}
-                        {currentStep === 1 ? (
 
-                            <div className="lg:hidden  grid gap-6 gap-x-10">
-                                {/* Student ID */}
-                                <div className="block">
-                                    <label htmlFor="studentId" className="text-black">
-                                        Student ID:
-                                    </label>
-                                    <input
-                                        id="studentId"
-                                        type="number"
-                                        className="mt-0 block w-full rounded-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register("studentId")}
+
+
+                <Form {...form}  >
+                    <form onSubmit={handleSubmit(onSubmit)} className=" bg-[#740938]  shadow-lg text-white rounded-lg m-5   ">
+                        <FormLabel className="flex  flex-col  items-center justify-center text-5xl ">
+                            <img src="/fav-3078db09.png" className="w-40 h-32" alt="" />
+                            <h1 className="pt-5 font-bold">Sign Up</h1></FormLabel>
+                        <div className="   py-10 px-5 gap-7 gap-x-10 ">
+
+                            
+
+                                <>
+                                    <FormField
+                                        control={control}
+                                        name="studentId"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>StudentID:</FormLabel>
+                                                <FormControl>
+                                                    <Input placeholder="Enter a your valid studentID"  {...field} />
+                                                </FormControl>
+                                                <FormDescription className="lg:w-72 text-gray-300">
+                                                    Make sure your ID is a valid ID(eg:5221040000)
+                                                </FormDescription>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
                                     />
-                                    {errors.studentId && (
-                                        <p className="text-red-600 text-sm">
-                                            {errors.studentId.message}
-                                        </p>
-                                    )}
-                                </div>
+                                    <FormField
+                                        control={control}
+                                        name="fullName"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Username:</FormLabel>
+                                                <FormControl>
+                                                    <Input placeholder="Enter a your fullname" {...field} />
+                                                </FormControl>
+                                                <FormDescription className="text-gray-300">
+                                                    This is your public display name.
+                                                </FormDescription>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={control}
+                                        name="email"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Email:</FormLabel>
+                                                <FormControl>
+                                                    <Input placeholder="Enter your Valid Email" {...field} />
+                                                </FormControl>
+                                                <FormDescription className="lg:w-72 text-gray-300">
+                                                    Make sure your email is a valid email (eg:test@gmail.com)
+                                                </FormDescription>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={control}
+                                        name="password"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Password:</FormLabel>
+                                                <FormControl>
+                                                    <Input placeholder="Enter a your Password" {...field} />
+                                                </FormControl>
+                                                <FormDescription className="w-64 lg:w-72 text-gray-300">
+                                                    Make sure Your password is Strong and Contains At least 6 Characters(eg:Pass123@)
+                                                </FormDescription>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                               
 
-                                {/* Full Name */}
-                                <div className="block">
-                                    <label htmlFor="name" className="text-black">
-                                        Full Name:
-                                    </label>
-                                    <input
-                                        id="name"
-                                        type="text"
-                                        className="mt-0 block w-full rounded-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register("fullName")}
-                                    />
-                                    {errors.fullName && (
-                                        <p className="text-red-600 text-sm">
-                                            {errors.fullName.message}
-                                        </p>
-                                    )}
-                                </div>
 
-                                {/* Email */}
-                                <div className="block">
-                                    <label htmlFor="email" className="text-black">
-                                        Email:
-                                    </label>
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        className="mt-0 block w-full rounded-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register("email")}
-                                    />
-                                    {errors.email && (
-                                        <p className="text-red-600 text-sm">
-                                            {errors.email.message}
-                                        </p>
-                                    )}
-                                </div>
-                                <div className='block'>
-                                    <label htmlFor="level" className='text-black'>Level:</label>
-                                    <input
-                                        id="level"
-                                        type="number"
-                                        className="mt-0 block w-full px-0.5 border-0  rounded-md   border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register('level', { valueAsNumber: true })}
-                                    />
-                                    {errors.level && <p className='text-red-600 text-sm'>{errors.level.message}</p>}
-                                </div>
-                                <button
-                                    type="button"
-                                    onClick={nextStep}
-                                    className="p-2 mt-6 bg-[#740938] text-white rounded-md w-full hover:bg-white hover:text-black border-2"
-                                >
-                                    Next
-                                </button>
-                            </div>
-                        ) : (
-                            <div className="grid gap-6  gap-x-10">
+                            
+
                                 {/* Telephone */}
-                                <div className="block">
-                                    <label htmlFor="telephone" className="text-black">
-                                        Telephone:
-                                    </label>
-                                    <input
-                                        id="telephone"
-                                        type="text"
-                                        className="mt-0 block w-full px-0.5 rounded-md border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register("telephone")}
-                                    />
-                                    {errors.telephone && (
-                                        <p className="text-red-600 text-sm">
-                                            {errors.telephone.message}
-                                        </p>
-                                    )}
-                                </div>
 
-                                {/* Password */}
-                                <div className="block">
-                                    <label htmlFor="password" className="text-black">
-                                        Password:
-                                    </label>
-                                    <input
-                                        id="password"
-                                        type="password"
-                                        className="mt-0 block w-full px-0.5 rounded-md border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register("password")}
-                                    />
-                                    {errors.password && (
-                                        <p className="text-red-600 text-sm">
-                                            {errors.password.message}
-                                        </p>
+                                <FormField
+                                    control={control}
+                                    name="telephone"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>PhoneNumber:</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Enter your valid Tel" {...field} type="tel" />
+                                            </FormControl>
+                                            <FormDescription className="text-gray-300">
+                                                (eg:0512345678)
+                                            </FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
                                     )}
-                                </div>
+                                />
+                                {/* level */}
+
 
                                 {/* Gender */}
-                                <div className="block">
-                                    <label htmlFor="gender" className="text-black">
-                                        Gender:
-                                    </label>
-                                    <div className="flex gap-4 mt-2">
-                                        <label className="flex items-center">
-                                            <input
-                                                id="gender-male"
-                                                type="radio"
-                                                value="Male"
-                                                className="mr-2"
-                                                {...register("gender")}
-                                            />
-                                            Male
-                                        </label>
-                                        <label className="flex items-center">
-                                            <input
-                                                id="gender-female"
-                                                type="radio"
-                                                value="Female"
-                                                className="mr-2"
-                                                {...register("gender")}
-                                            />
-                                            Female
-                                        </label>
-                                    </div>
-                                    {errors.gender && (
-                                        <p className="text-red-600 text-sm">
-                                            {errors.gender.message}
-                                        </p>
+
+                                <FormField
+                                    control={control}
+                                    name="gender"
+                                    render={({ field }) => (
+                                        <FormItem className="space-y-3">
+                                            <FormLabel>Gender</FormLabel>
+                                            <FormControl>
+                                                <RadioGroup
+                                                    onValueChange={field.onChange}
+                                                    defaultValue={field.value}
+                                                    className="flex   space-y-1 "
+                                                >
+                                                    <FormItem className="flex items-center space-x-3 space-y-0">
+                                                        <FormControl>
+                                                            <RadioGroupItem value="male" className="bg-white" />
+                                                        </FormControl>
+                                                        <FormLabel className="font-normal">
+                                                            Male
+                                                        </FormLabel>
+                                                    </FormItem>
+                                                    <FormItem className="flex items-center space-x-3 space-y-0">
+                                                        <FormControl>
+                                                            <RadioGroupItem value="female" className="bg-white" />
+                                                        </FormControl>
+                                                        <FormLabel className="font-normal">
+                                                            Female
+                                                        </FormLabel>
+                                                    </FormItem>
+
+                                                </RadioGroup>
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
                                     )}
-                                </div>
+                                />
 
 
+                                {/* level */}
+                                <Controller
+                                    control={control}
+                                    name="level"
 
+                                    render={({ field: { value, onChange } }) => (
+                                        <FormItem className="pt-4">
+                                            <FormLabel>Level:</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Enter your level" type="number"
+                                                    value={value}
+                                                    onChange={(e) => onChange(Number(e.target.value))}
+                                                />
+                                            </FormControl>
 
-                                {/* Department */}
-                                <div className='block'>
-                                    <label htmlFor="department" className='text-black'>Department:</label>
-                                    <input
-                                        id="department"
-                                        type="text"
-                                        className="mt-0 block w-full px-0.5 rounded-md border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-                                        {...register('department')}
-                                    />
-                                    {errors.department && <p className='text-red-600 text-sm'>{errors.department.message}</p>}
-                                </div>
-
-                                <p className="block  ">Already have an account ? <a className='underline underline-offset-1' href="/login">login</a></p>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={control}
+                                    name="department"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Department:</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Enter your department name " {...field} type="text" />
+                                            </FormControl>
+                                            <FormDescription className="text-gray-300 w-64 lg:w-72">
+                                                Deparment name can be in full or short form
+                                            </FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <p className="block  ">Already have an account ? <a className='underline underline-offset-1 ' href="/login">login</a></p>
                                 <div className="flex justify-between">
-                                    <button
-                                        type="button"
-                                        onClick={previousStep}
-                                        className="px-4 py-2 mt-6 bg-black text-white rounded-md hover:bg-black"
-                                    >
-                                        Back
-                                    </button>
+                                  
 
-                                    <button
+                                    <Button
                                         type="submit"
                                         disabled={loading}
-                                        className="px-4 py-2 mt-6 bg-[#740938] text-white rounded-md hover:bg-white hover:text-black border-2 "
+                                        className="px-4 py-2 mt-6 bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2 "
                                     >
                                         {loading ? "Signing up..." : "Submit"}
-                                    </button>
+                                    </Button>
                                 </div>
-                            </div>
-                        )}
+                            </>
+                            
 
-
-
+                        </div>
 
                     </form>
-                </div>
-            )}
 
+                </Form>
+
+            )}
 
             {/* and this to hide for large screens */}
 
 
-        </>
-    );
 
-};
+
+
+        </>
+    )
+}
 
 export default SignUpForm;

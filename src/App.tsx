@@ -11,7 +11,6 @@ import Commingsoon from './Pages/Commingsoon'
 
 const App: React.FC = () => {
 
-
   return (
     
     <Router>
