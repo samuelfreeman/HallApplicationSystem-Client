@@ -21,7 +21,7 @@ import { useToast } from "@/hooks/use-toast"
 
 
 const SignUpForm: React.FC = () => {
-    
+
     const [isLargeScreen, setIsLargeScreen] = useState(window.matchMedia("(min-width: 1024px)").matches);
     useEffect(() => {
         const mediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -78,8 +78,8 @@ const SignUpForm: React.FC = () => {
     // };
     const { handleSubmit, control } = form;
     // Navigation handlers
-    
-    
+
+
 
     return (
         <>
@@ -222,7 +222,7 @@ const SignUpForm: React.FC = () => {
                                                 onChange={(e) => onChange(Number(e.target.value))}
                                             />
                                         </FormControl>
-                                        
+
                                         <FormMessage />
                                     </FormItem>
                                 )}
@@ -264,77 +264,77 @@ const SignUpForm: React.FC = () => {
                             <h1 className="pt-5 font-bold">Sign Up</h1></FormLabel>
                         <div className="   py-10 px-5 gap-7 gap-x-10 ">
 
-                            
-
-                                <>
-                                    <FormField
-                                        control={control}
-                                        name="studentId"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel>StudentID:</FormLabel>
-                                                <FormControl>
-                                                    <Input placeholder="Enter a your valid studentID"  {...field} />
-                                                </FormControl>
-                                                <FormDescription className="lg:w-72 text-gray-300">
-                                                    Make sure your ID is a valid ID(eg:5221040000)
-                                                </FormDescription>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={control}
-                                        name="fullName"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel>Username:</FormLabel>
-                                                <FormControl>
-                                                    <Input placeholder="Enter a your fullname" {...field} />
-                                                </FormControl>
-                                                <FormDescription className="text-gray-300">
-                                                    This is your public display name.
-                                                </FormDescription>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={control}
-                                        name="email"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel>Email:</FormLabel>
-                                                <FormControl>
-                                                    <Input placeholder="Enter your Valid Email" {...field} />
-                                                </FormControl>
-                                                <FormDescription className="lg:w-72 text-gray-300">
-                                                    Make sure your email is a valid email (eg:test@gmail.com)
-                                                </FormDescription>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={control}
-                                        name="password"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel>Password:</FormLabel>
-                                                <FormControl>
-                                                    <Input placeholder="Enter a your Password" {...field} />
-                                                </FormControl>
-                                                <FormDescription className="w-64 lg:w-72 text-gray-300">
-                                                    Make sure Your password is Strong and Contains At least 6 Characters(eg:Pass123@)
-                                                </FormDescription>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                               
 
 
                             
+                                <FormField
+                                    control={control}
+                                    name="studentId"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>StudentID:</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Enter a your valid studentID"  {...field} />
+                                            </FormControl>
+                                            <FormDescription className="lg:w-72 text-gray-300">
+                                                Make sure your ID is a valid ID(eg:5221040000)
+                                            </FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={control}
+                                    name="fullName"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Username:</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Enter a your fullname" {...field} />
+                                            </FormControl>
+                                            <FormDescription className="text-gray-300">
+                                                This is your public display name.
+                                            </FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={control}
+                                    name="email"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Email:</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Enter your Valid Email" {...field} />
+                                            </FormControl>
+                                            <FormDescription className="lg:w-72 text-gray-300">
+                                                Make sure your email is a valid email (eg:test@gmail.com)
+                                            </FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={control}
+                                    name="password"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Password:</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Enter a your Password" {...field} />
+                                            </FormControl>
+                                            <FormDescription className="w-64 lg:w-72 text-gray-300">
+                                                Make sure Your password is Strong and Contains At least 6 Characters(eg:Pass123@)
+                                            </FormDescription>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+
+
+
+
 
                                 {/* Telephone */}
 
@@ -433,18 +433,18 @@ const SignUpForm: React.FC = () => {
                                 />
                                 <p className="block  ">Already have an account ? <a className='underline underline-offset-1 ' href="/login">login</a></p>
                                 <div className="flex justify-between">
-                                  
+
 
                                     <Button
                                         type="submit"
                                         disabled={loading}
-                                        className="px-4 py-2 mt-6 bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2 "
+                                        className="px-4 py-2 mt-6 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2 "
                                     >
                                         {loading ? "Signing up..." : "Submit"}
                                     </Button>
                                 </div>
-                            </>
                             
+
 
                         </div>
 

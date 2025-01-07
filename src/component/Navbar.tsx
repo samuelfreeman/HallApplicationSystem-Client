@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
+
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showRegister, setShowUp] = useState(true)
-    const [showLogin, setShowLogin] = useState(false)
+    const [showLogin, setShowLogin] = useState(true)
+    
     const navigate = useNavigate()
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -17,7 +18,13 @@ const Navbar: React.FC = () => {
         const student = localStorage.getItem("student")
         if (student) {
             setShowUp(false);
+            setShowLogin(false);
+
+        }
+        else {
+            setShowUp(true);
             setShowLogin(true);
+            
         }
 
 
@@ -52,25 +59,26 @@ const Navbar: React.FC = () => {
                     </div>
                     {
                         showRegister && (
-
-                            <div className="hidden md:flex items-center">
-                                <Button className="mr-4 w-full  bg-black text-white"><NavLink to={"/signup"}>Register</NavLink></Button>
+                            <div className='flex '>
+                                <div className="hidden md:flex mr-3 items-center">
+                                    <Button className=" w-full  bg-black text-white"><a href="/signup">Register</a></Button>
+                                </div>
+                                <div className="hidden md:flex items-center">
+                                    <Button className=" w-full px-6  mr-2 bg-black text-white"><a href="/login">Login</a></Button>
+                                </div>
                             </div>
                         )
-                    }       {
-                        showLogin && (
-
-                            <div className="hidden md:flex items-center">
-                                <Button className="mr-4 w-full px-6   bg-black text-white"><NavLink to={"/login"}>Login</NavLink></Button>
-                            </div>
-                        )
-                    }
+                    }       
                     {
-                        !showLogin && !showRegister && (
+                        (!showRegister && !showLogin) ? (
                             <div className="hidden md:flex items-center">
                                 <Button className="mr-4 w-full bg-black text-white" onClick={handleClick}>Logout</Button>
                             </div>
-                        )}
+                        ) : null
+                    }
+
+
+
 
 
 
@@ -92,16 +100,13 @@ const Navbar: React.FC = () => {
                         <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Announcements</a>
                         <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Help/Support</a>
                         {
-                            showRegister && (
-                                <Button className="mr-4 w-full bg-black text-white"><Link to={"/signup"}>Register</Link></Button>)}
-                        {
-                            showLogin && (
+                            showRegister && showLogin && (
+                                <div className='w-full '>
+                                    <Button className=" w-full mb-2 bg-black text-white"><a href="/signup">Register</a></Button>
+                                    <Button className="  w-full  bg-black text-white"><a href="/login">Login</a></Button>
+                                </div>
+                            )}
 
-
-                                <Button className="mr-4  w-full  bg-black text-white"><Link to={"/login"}>Login</Link></Button>
-
-                            )
-                        }
                         {
                             !showLogin && !showRegister && (
                                 <Button className="mr-4 w-full bg-black text-white" onClick={handleClick}>Logout</Button>)}
