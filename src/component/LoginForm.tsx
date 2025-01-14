@@ -77,11 +77,11 @@ export function LoginForm() {
   return (
     <>
       {isLargeScreen ? (<Form {...form}>
-        <form onSubmit={handleSubmit(onSubmit)} className=" bg-[#740938] grid grid-cols-2  shadow-lg text-white rounded-lg m-5   ">
+        <form onSubmit={handleSubmit(onSubmit)} className=" bg-[#740938] grid grid-cols-2  shadow-lg text-white rounded-lg m-5 gap-x-36   ">
           <FormLabel className="flex  flex-col  items-center justify-center text-5xl ">
             <img src="/fav-3078db09.png" className="w-56 h-50" alt="" />
             <h1 className="pt-5 font-bold">Sign Up</h1></FormLabel>
-          <div className=" grid grid-cols-2  p-10 gap-7 gap-x-10 ">
+          <div className=" grid grid-cols-1  p-10 gap-7 gap-x-10 ">
 
 
             <FormField

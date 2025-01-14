@@ -85,15 +85,15 @@ const SignUpForm: React.FC = () => {
         <>
             {isLargeScreen ? (
                 <Form {...form}  >
-
-                    <form onSubmit={handleSubmit(onSubmit)} className=" bg-[#740938] grid grid-cols-2 shadow-lg text-white rounded-lg m-5   ">
+                    
+                    <form onSubmit={handleSubmit(onSubmit)} className=" bg-[#740938] grid grid-cols-2 shadow-lg  text-white rounded-lg -mt-5 ">
                         <FormLabel className="flex  flex-col  items-center justify-center text-5xl ">
                             <img src="/fav-3078db09.png" className="w-56 h-50" alt="" />
                             <h1 className="pt-5 font-bold">Sign Up</h1></FormLabel>
-                        <div className=" grid grid-cols-2  p-10 gap-7 gap-x-10 ">
+                        <div className=" grid grid-cols-2  p-10 gap-7 gap-x-5  gap-y-1">
 
 
-                            <FormField
+                            <FormField 
                                 control={control}
                                 name="studentId"
                                 render={({ field }) => (
@@ -243,6 +243,7 @@ const SignUpForm: React.FC = () => {
                                     </FormItem>
                                 )}
                             />
+                            <p className="block  ">Already have an account ? <NavLink className='underline underline-offset-1 ' to="/login">login</NavLink></p>
                             <Button type="submit" className="col-span-2 bg-white text-black hover:text-white">
                                 {loading ? "Signing up..." : "Signup"}
                             </Button>
@@ -266,184 +267,184 @@ const SignUpForm: React.FC = () => {
 
 
 
-                            
-                                <FormField
-                                    control={control}
-                                    name="studentId"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>StudentID:</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="Enter a your valid studentID"  {...field} />
-                                            </FormControl>
-                                            <FormDescription className="lg:w-72 text-gray-300">
-                                                Make sure your ID is a valid ID(eg:5221040000)
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={control}
-                                    name="fullName"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Username:</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="Enter a your fullname" {...field} />
-                                            </FormControl>
-                                            <FormDescription className="text-gray-300">
-                                                This is your public display name.
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={control}
-                                    name="email"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Email:</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="Enter your Valid Email" {...field} />
-                                            </FormControl>
-                                            <FormDescription className="lg:w-72 text-gray-300">
-                                                Make sure your email is a valid email (eg:test@gmail.com)
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={control}
-                                    name="password"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Password:</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="Enter a your Password" {...field} />
-                                            </FormControl>
-                                            <FormDescription className="w-64 lg:w-72 text-gray-300">
-                                                Make sure Your password is Strong and Contains At least 6 Characters(eg:Pass123@)
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
+
+                            <FormField
+                                control={control}
+                                name="studentId"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>StudentID:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter a your valid studentID"  {...field} />
+                                        </FormControl>
+                                        <FormDescription className="lg:w-72 text-gray-300">
+                                            Make sure your ID is a valid ID(eg:5221040000)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="fullName"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Username:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter a your fullname" {...field} />
+                                        </FormControl>
+                                        <FormDescription className="text-gray-300">
+                                            This is your public display name.
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Email:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your Valid Email" {...field} />
+                                        </FormControl>
+                                        <FormDescription className="lg:w-72 text-gray-300">
+                                            Make sure your email is a valid email (eg:test@gmail.com)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="password"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Password:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter a your Password" {...field} />
+                                        </FormControl>
+                                        <FormDescription className="w-64 lg:w-72 text-gray-300">
+                                            Make sure Your password is Strong and Contains At least 6 Characters(eg:Pass123@)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
 
 
 
 
 
-                                {/* Telephone */}
+                            {/* Telephone */}
 
-                                <FormField
-                                    control={control}
-                                    name="telephone"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>PhoneNumber:</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="Enter your valid Tel" {...field} type="tel" />
-                                            </FormControl>
-                                            <FormDescription className="text-gray-300">
-                                                (eg:0512345678)
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                {/* level */}
-
-
-                                {/* Gender */}
-
-                                <FormField
-                                    control={control}
-                                    name="gender"
-                                    render={({ field }) => (
-                                        <FormItem className="space-y-3">
-                                            <FormLabel>Gender</FormLabel>
-                                            <FormControl>
-                                                <RadioGroup
-                                                    onValueChange={field.onChange}
-                                                    defaultValue={field.value}
-                                                    className="flex   space-y-1 "
-                                                >
-                                                    <FormItem className="flex items-center space-x-3 space-y-0">
-                                                        <FormControl>
-                                                            <RadioGroupItem value="male" className="bg-white" />
-                                                        </FormControl>
-                                                        <FormLabel className="font-normal">
-                                                            Male
-                                                        </FormLabel>
-                                                    </FormItem>
-                                                    <FormItem className="flex items-center space-x-3 space-y-0">
-                                                        <FormControl>
-                                                            <RadioGroupItem value="female" className="bg-white" />
-                                                        </FormControl>
-                                                        <FormLabel className="font-normal">
-                                                            Female
-                                                        </FormLabel>
-                                                    </FormItem>
-
-                                                </RadioGroup>
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
+                            <FormField
+                                control={control}
+                                name="telephone"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>PhoneNumber:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your valid Tel" {...field} type="tel" />
+                                        </FormControl>
+                                        <FormDescription className="text-gray-300">
+                                            (eg:0512345678)
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            {/* level */}
 
 
-                                {/* level */}
-                                <Controller
-                                    control={control}
-                                    name="level"
+                            {/* Gender */}
 
-                                    render={({ field: { value, onChange } }) => (
-                                        <FormItem className="pt-4">
-                                            <FormLabel>Level:</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="Enter your level" type="number"
-                                                    value={value}
-                                                    onChange={(e) => onChange(Number(e.target.value))}
-                                                />
-                                            </FormControl>
+                            <FormField
+                                control={control}
+                                name="gender"
+                                render={({ field }) => (
+                                    <FormItem className="space-y-3">
+                                        <FormLabel>Gender</FormLabel>
+                                        <FormControl>
+                                            <RadioGroup
+                                                onValueChange={field.onChange}
+                                                defaultValue={field.value}
+                                                className="flex   space-y-1 "
+                                            >
+                                                <FormItem className="flex items-center space-x-3 space-y-0">
+                                                    <FormControl>
+                                                        <RadioGroupItem value="male" className="bg-white" />
+                                                    </FormControl>
+                                                    <FormLabel className="font-normal">
+                                                        Male
+                                                    </FormLabel>
+                                                </FormItem>
+                                                <FormItem className="flex items-center space-x-3 space-y-0">
+                                                    <FormControl>
+                                                        <RadioGroupItem value="female" className="bg-white" />
+                                                    </FormControl>
+                                                    <FormLabel className="font-normal">
+                                                        Female
+                                                    </FormLabel>
+                                                </FormItem>
 
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={control}
-                                    name="department"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Department:</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="Enter your department name " {...field} type="text" />
-                                            </FormControl>
-                                            <FormDescription className="text-gray-300 w-64 lg:w-72">
-                                                Deparment name can be in full or short form
-                                            </FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <p className="block  ">Already have an account ? <NavLink className='underline underline-offset-1 ' to="/login">login</NavLink></p>
-                                <div className="flex justify-between">
+                                            </RadioGroup>
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
 
 
-                                    <Button
-                                        type="submit"
-                                        disabled={loading}
-                                        className="px-4 py-2 mt-6 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2 "
-                                    >
-                                        {loading ? "Signing up..." : "Submit"}
-                                    </Button>
-                                </div>
-                            
+                            {/* level */}
+                            <Controller
+                                control={control}
+                                name="level"
+
+                                render={({ field: { value, onChange } }) => (
+                                    <FormItem className="pt-4">
+                                        <FormLabel>Level:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your level" type="number"
+                                                value={value}
+                                                onChange={(e) => onChange(Number(e.target.value))}
+                                            />
+                                        </FormControl>
+
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={control}
+                                name="department"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Department:</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your department name " {...field} type="text" />
+                                        </FormControl>
+                                        <FormDescription className="text-gray-300 w-64 lg:w-72">
+                                            Deparment name can be in full or short form
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <p className="block  ">Already have an account ? <NavLink className='underline underline-offset-1 ' to="/login">login</NavLink></p>
+                            <div className="flex justify-between">
+
+
+                                <Button
+                                    type="submit"
+                                    disabled={loading}
+                                    className="px-4 py-2 mt-6 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2 "
+                                >
+                                    {loading ? "Signing up..." : "Submit"}
+                                </Button>
+                            </div>
+
 
 
                         </div>
