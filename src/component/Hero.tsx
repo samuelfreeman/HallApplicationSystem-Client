@@ -1,7 +1,7 @@
 
 import { Typewriter } from 'react-simple-typewriter'
 import { Button } from '@/components/ui/button'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router'
 const Hero = () => {
     return (
         <div className='w-full h-[30vh]   mt-16 lg:mb-52  mb-40'>
@@ -32,7 +32,7 @@ const Hero = () => {
                 </div>
                     <div className=" relative flex  space-x-2  mt-6 justify-end lg:pr-20 lg:pt-10  ml-10 mr-10  ">
                      <Button className='text-white outline-1 outline'><NavLink to={"/comingsoon"}>Get started</NavLink></Button>
-                     <Button className='text-black bg-white'> <a href="#about">Learn More</a></Button>
+                     <Button className='text-black bg-white'> <NavLink to="#about">Learn More</NavLink></Button>
                     </div>
                 
             </div>

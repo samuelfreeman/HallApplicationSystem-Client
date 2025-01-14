@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import OtpInput from 'react-otp-input';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const VerifyCode: React.FC = () => {
     // State to store the entered code

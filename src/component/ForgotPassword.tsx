@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
@@ -68,7 +68,7 @@ const ForgotPassword: React.FC = () => {
 
 
 
-            <p>Back to login? <a className='underline underline-offset-1' href="/login">Login</a></p>
+            <p>Back to login? <NavLink className='underline underline-offset-1' to="/login">Login</NavLink></p>
 
 
             <Button type="submit" className='p-2  bg-white text-black rounded-md hover:bg-[#740938] hover:text-white  border-2 hover:border-black mb-2 '>Verify</Button>

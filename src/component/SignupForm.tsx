@@ -3,7 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch, useAppSelector } from "../state/hooks";
 import { signUp } from "../api/student/thunk";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router";
 import { SignUpInput, signUpSchema } from "../validations/authValidation";
 import { Button } from "@/components/ui/button"
 import {
@@ -431,7 +431,7 @@ const SignUpForm: React.FC = () => {
                                         </FormItem>
                                     )}
                                 />
-                                <p className="block  ">Already have an account ? <a className='underline underline-offset-1 ' href="/login">login</a></p>
+                                <p className="block  ">Already have an account ? <NavLink className='underline underline-offset-1 ' to="/login">login</NavLink></p>
                                 <div className="flex justify-between">
 
 

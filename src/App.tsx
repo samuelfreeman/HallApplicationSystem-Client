@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router'
 import './index.css'
 import LoginPage from './Pages/LoginPage'
 import SignupPage from './Pages/SigupPage'
@@ -12,8 +12,8 @@ import Commingsoon from './Pages/Commingsoon'
 const App: React.FC = () => {
 
   return (
-    
-    <Router>
+    <BrowserRouter>
+
 
       <Routes>
 
@@ -25,7 +25,7 @@ const App: React.FC = () => {
         <Route path='/verify-code' element={<VerifyCode />} />
         <Route path='/reset-password' element={<ResetPassword />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 

@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router';
 
 // Define validation schema using Zod
 const Schema = z
@@ -87,9 +87,9 @@ const Resetpass: React.FC = () => {
 
       <p>
         Back to login?{' '}
-        <a className="underline underline-offset-1" href="/login">
+        <NavLink className="underline underline-offset-1" to="/login">
           Login
-        </a>
+        </NavLink>
       </p>
 
       <button

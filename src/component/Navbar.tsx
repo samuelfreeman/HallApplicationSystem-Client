@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import {  useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router';
+import { useNavigate } from "react-router";
+
 
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showRegister, setShowUp] = useState(true)
     const [showLogin, setShowLogin] = useState(true)
-    
+
     const navigate = useNavigate()
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -24,7 +26,7 @@ const Navbar: React.FC = () => {
         else {
             setShowUp(true);
             setShowLogin(true);
-            
+
         }
 
 
@@ -46,29 +48,29 @@ const Navbar: React.FC = () => {
                 <div className="flex justify-between h-16">
                     <div className="flex">
                         <div className="flex-shrink-0 p-1">
-                            <a href="/" className="text-xl font-bold">
+                            <NavLink to="/" className="text-xl font-bold">
                                 <img className="w-16 h-14" src="/fav-3078db09.png" alt="" />
-                            </a>
+                            </NavLink>
                         </div>
                         <div className="hidden md:ml-6 md:flex md:space-x-8 md:p-5 md:justify-end md:w-[800px]">
-                            <a href="/commingsoon" className="text-gray-900 hover:text-gray-700">Request Room</a>
-                            <a href="/commingsoon" className="text-gray-900 hover:text-gray-700">Payments</a>
-                            <a href="/commingsoon" className="text-gray-900 hover:text-gray-700">Announcements</a>
-                            <a href="/commingsoon" className="text-gray-900 hover:text-gray-700">Help/Support</a>
+                            <NavLink to="/commingsoon" className="text-gray-900 hover:text-gray-700">Request Room</NavLink>
+                            <NavLink to="/commingsoon" className="text-gray-900 hover:text-gray-700">Payments</NavLink>
+                            <NavLink to="/commingsoon" className="text-gray-900 hover:text-gray-700">Announcements</NavLink>
+                            <NavLink to="/commingsoon" className="text-gray-900 hover:text-gray-700">Help/Support</NavLink>
                         </div>
                     </div>
                     {
                         showRegister && (
                             <div className='flex '>
                                 <div className="hidden md:flex mr-3 items-center">
-                                    <Button className=" w-full  bg-black text-white"><a href="/signup">Register</a></Button>
+                                    <Button className=" w-full  bg-black text-white"><NavLink to="/signup">Register</NavLink></Button>
                                 </div>
                                 <div className="hidden md:flex items-center">
-                                    <Button className=" w-full px-6  mr-2 bg-black text-white"><a href="/login">Login</a></Button>
+                                    <Button className=" w-full px-6  mr-2 bg-black text-white"><NavLink to="/login">Login</NavLink></Button>
                                 </div>
                             </div>
                         )
-                    }       
+                    }
                     {
                         (!showRegister && !showLogin) ? (
                             <div className="hidden md:flex items-center">
@@ -95,15 +97,15 @@ const Navbar: React.FC = () => {
             {isOpen && (
                 <div className="md:hidden">
                     <div className="w-full flex flex-col items-center sm:px-3 p-4 space-y-2">
-                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Request Room</a>
-                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Payments</a>
-                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Announcements</a>
-                        <a href="/commingsoon" className="block text-gray-900 hover:text-gray-700">Help/Support</a>
+                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Request Room</NavLink>
+                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Payments</NavLink>
+                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Announcements</NavLink>
+                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Help/Support</NavLink>
                         {
                             showRegister && showLogin && (
                                 <div className='w-full '>
-                                    <Button className=" w-full mb-2 bg-black text-white"><a href="/signup">Register</a></Button>
-                                    <Button className="  w-full  bg-black text-white"><a href="/login">Login</a></Button>
+                                    <Button className=" w-full mb-2 bg-black text-white"><NavLink to="/signup">Register</NavLink></Button>
+                                    <Button className="  w-full  bg-black text-white"><NavLink to="/login">Login</NavLink></Button>
                                 </div>
                             )}
 

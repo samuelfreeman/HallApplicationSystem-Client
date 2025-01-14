@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch, useAppSelector } from "../state/hooks";
 import { login } from "../api/student/thunk";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router";
 import { LoginInput, loginSchema } from "../validations/authValidation";
 import { useToast } from "@/hooks/use-toast"
 
@@ -116,8 +116,8 @@ export function LoginForm() {
                 </FormItem>
               )}
             />
-            <p>Do not have an account? <a className="underline underline-offset-1" href="/signup">SignUp</a></p>
-            <p className="text-right underline"><a href="/forgot-password">Forgot password?</a></p>
+            <p>Do not have an account? <NavLink className="underline underline-offset-1" to="/signup">SignUp</NavLink></p>
+            <p className="text-right underline"><NavLink to="/forgot-password">Forgot password?</NavLink></p>
 
             <Button type="submit" disabled={loading} className="p-2 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2  lg:border-black mb-2">
               {loading ? "Logging in..." : "Login"}
@@ -168,8 +168,8 @@ export function LoginForm() {
                   </FormItem>
                 )}
               />
-              <p>Do not have an account? <a className="underline underline-offset-1" href="/signup">SignUp</a></p>
-              <p className="text-right underline"><a href="/forgot-password">Forgot password?</a></p>
+              <p>Do not have an account? <NavLink className="underline underline-offset-1" to="/signup">SignUp</NavLink></p>
+              <p className="text-right underline"><NavLink to="/forgot-password">Forgot password?</NavLink></p>
 
               <Button type="submit" disabled={loading} className="p-2 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2  lg:border-black mb-2">
                 {loading ? "Logging in..." : "Login"}
