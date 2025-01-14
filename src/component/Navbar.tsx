@@ -97,10 +97,10 @@ const Navbar: React.FC = () => {
             {isOpen && (
                 <div className="md:hidden">
                     <div className="w-full flex flex-col items-center sm:px-3 p-4 space-y-2">
-                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Request Room</NavLink>
-                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Payments</NavLink>
-                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Announcements</NavLink>
-                        <NavLink to="/commingsoon" className="block text-gray-900 hover:text-gray-700">Help/Support</NavLink>
+                        <NavLink to="/comingsoon" className="block text-gray-900 hover:text-gray-700">Request Room</NavLink>
+                        <NavLink to="/comingsoon" className="block text-gray-900 hover:text-gray-700">Payments</NavLink>
+                        <NavLink to="/comingsoon" className="block text-gray-900 hover:text-gray-700">Announcements</NavLink>
+                        <NavLink to="/comingsoon" className="block text-gray-900 hover:text-gray-700">Help/Support</NavLink>
                         {
                             showRegister && showLogin && (
                                 <div className='w-full '>
