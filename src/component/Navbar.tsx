@@ -53,10 +53,11 @@ const Navbar: React.FC = () => {
                             </NavLink>
                         </div>
                         <div className="hidden md:ml-6 md:flex md:space-x-8 md:p-5 md:justify-end md:w-[800px]">
-                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Request Room</NavLink>
-                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Payments</NavLink>
-                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Announcements</NavLink>
-                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Help/Support</NavLink>
+                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">About</NavLink>
+                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Reservation</NavLink>
+                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Compliant Desk</NavLink>
+                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Payment</NavLink>
+                            <NavLink to="/comingsoon" className="text-gray-900 hover:text-gray-700">Contact</NavLink>
                         </div>
                     </div>
                     {
