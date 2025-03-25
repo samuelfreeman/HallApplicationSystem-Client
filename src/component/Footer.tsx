@@ -1,18 +1,51 @@
-import React from "react";
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-slate-950 text-white py-6">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <p className="text-center md:text-left">&copy; {new Date().getFullYear()} Hall Management System. All Rights Reserved.</p>
-        <ul className="flex space-x-4 mt-4 md:mt-0">
-          <li><a href="/privacy-policy" className="hover:underline">Privacy Policy</a></li>
-          <li><a href="/terms" className="hover:underline">Terms & Conditions</a></li>
-          <li><a href="/contact" className="hover:underline">Contact Us</a></li>
-        </ul>
+
+export default function Footer(){
+  return(
+    <footer className="bg-[#000] text-white w-full">
+     <div className="flex flex-col md:flex-row items-start justify-between px-5 md:px-24 py-12">
+     <div>
+        <img src="../../public/Aamusted logo (2).png" alt="" width={150}/>
       </div>
-    </footer>
-  );
-};
 
-export default Footer;
+      <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+        <div>
+          <h1 className="text-[24px] font-[700] py-5">Help</h1>
+          <ul className="flex flex-col gap-3">
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+          </ul>
+        </div>
+
+        <div>
+        <h1 className="text-[24px] font-[700] py-5">Payments</h1>
+          <ul className="flex flex-col gap-3">
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+            <li><a href="">Lorem ipsum.</a></li>
+          </ul>
+        </div>
+
+        <div>
+        <h1 className="text-[24px] font-[700] py-5">Contact Us</h1>
+          <ul className="flex flex-col gap-3">
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">X</a></li>
+            <li><a href="">LinkedIn</a></li>
+            <li><a href="">Youtube</a></li>
+          </ul>
+        </div>
+      </div>
+     </div>
+     <div className="border-t-[1px] border-[#4F4F4F] py-5 flex items-center justify-center">
+      <p className="text-center">Copyright@2024. All Right Reserved.</p>
+     </div>
+    </footer>
+  )
+}

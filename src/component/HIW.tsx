@@ -10,7 +10,7 @@ import {
 
 const HIW = () => {
   return (
-    <div className=' w-full lg:h-full text-center pt-10 bg-slate-950 pb-10'>
+    <div className=' w-full lg:h-full text-center pt-10 bg-black pb-10'>
       <h1 className='text-4xl text-white'>How It Works </h1>
       <h2 className=' px-4 text-sm py-3 text-red-600 font-bold'>REQUEST {">"} PAYMENT {">"} REVIEW {">"} REPEAT </h2>
 

@@ -1,5 +1,6 @@
 import Navbar from "../../Navbar";
 import NavInfo from "../../NavInfo";
+import { Link } from "react-router";
 
 export default function BookRoom() {
   return (
@@ -796,11 +797,11 @@ export default function BookRoom() {
         confirm your booking.
       </p>
       <div className="flex justify-center py-10">
-        <a href="/popup">
+        <Link to="/reservationconfirm">
         <button className="mt-4 bg-[#900633] text-white px-16 py-3 rounded-md">
           Submit
         </button>
-        </a>
+        </Link>
         
       </div>
     </section>

@@ -1,11 +1,13 @@
-import Navbar from "../components/Navbar";
-import NavInfo from "../components/NavInfo";
+import Navbar from "@/component/Navbar";
+import NavInfo from "@/component/NavInfo";
+import { Link } from "react-router";
+
 
 export default function PaymentCreditCard() {
   return (
     <>
-      <Navbar />
-      <NavInfo title="Payment Information" />
+     <Navbar/>
+     <NavInfo title="Payment Information"/>
 
       <div className="px-40 py-5">
         <h1 className="text-[30px] font-[700] pt-4 pb-9">Payment Details</h1>
@@ -81,11 +83,13 @@ export default function PaymentCreditCard() {
             </div>
 
             <div className="flex items-center justify-center text-center py-5">
+              <Link to='/paymentConfirm'>
               <input
                 type="submit"
                 className="py-3 px-10 bg-[#900633] text-white text-[22px] rounded-lg cursor-pointer"
                 value="Make Payment"
               />
+              </Link>
             </div>
           </form>
         </div>

@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
   return (
     <section className="bg-gray-100 py-12 px-6 flex flex-col">
       <h2 className="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-[90%] mx-auto">
 
 
         <Carousel className="w-full max-w-xs" opts={{

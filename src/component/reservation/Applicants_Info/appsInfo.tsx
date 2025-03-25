@@ -1,5 +1,6 @@
 import Navbar from "../../Navbar";
 import NavInfo from "../../NavInfo";
+import { Link } from "react-router";
 
 export default function AppsInfo(){
     return(
@@ -78,11 +79,11 @@ export default function AppsInfo(){
             </div>
         
             <div className="text-center mt-6">
-                <a href="/bookroom">
+                <Link to="/bookroom">
                 <button className="bg-[#800040] text-white px-6 py-2 w-44 rounded-md hover:bg-[#660033] transition">
                     Next
                 </button>
-                </a>
+                </Link>
             </div>
         </div>
         

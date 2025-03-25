@@ -1,9 +1,10 @@
-import Complaint from "../components/Complaint/Complaint.tsx";
+import Complaint from "@/component/Complaint/Complaint";
+
 
 
 function ComplaintPage() {
     return (
-        <Complaint />
+        <Complaint/>
     )
 }
 

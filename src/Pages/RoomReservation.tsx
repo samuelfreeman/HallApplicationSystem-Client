@@ -1,5 +1,6 @@
-import Navbar from "../components/Navbar";
-import NavInfo from "../components/NavInfo";
+import Navbar from "@/component/Navbar";
+import NavInfo from "@/component/NavInfo";
+
 
 export default function RoomReservation(){
   return(

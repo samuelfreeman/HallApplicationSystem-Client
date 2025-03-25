@@ -1,5 +1,6 @@
 import Navbar from "../../Navbar";
 import NavInfo from "../../NavInfo";
+import { Link } from "react-router";
 
 export default function Instruction(){
     return(
@@ -31,11 +32,11 @@ export default function Instruction(){
                 </div>
             
                 <div className="text-center">
-                   <a href="/applicantInfo">
+                   <Link to="/applicantInfo">
                    <button className="mt-6 bg-[#800040] text-white px-6 py-2 w-44 rounded-md hover:bg-[#660033] transition duration-300">
                         Next
                     </button>
-                   </a>
+                   </Link>
                 </div>
             </div>
         </section>
