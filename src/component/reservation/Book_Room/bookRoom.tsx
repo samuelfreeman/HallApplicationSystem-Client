@@ -7,13 +7,13 @@ export default function BookRoom() {
    <>
    <Navbar/>
    <NavInfo title="Book Room"/>
-   <section className="mt-10 px-20">
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+   <section className="mt-5 sm:mt-10 px-2 sm:px-4 md:px-8 lg:px-20">
+      <div className="overflow-x-auto rounded-lg shadow-sm">
+        <table className="w-full border-collapse text-sm sm:text-base">
           <thead>
             <tr>
               <th className="border border-gray-300 px-2 py-1">
-                <select className="text-xl px-4 py-1">
+                <select className="text-sm sm:text-base md:text-lg px-2 sm:px-4 py-1">
                   <option>Floors</option>
                   <option>Ground</option>
                   <option>Floor 1</option>
@@ -28,7 +28,7 @@ export default function BookRoom() {
                   <option>Floor 10</option>
                 </select>
               </th>
-              <th colSpan={10} className="px-4 py-1 text-xl text-left">
+              <th colSpan={10} className="px-2 sm:px-4 py-1 text-sm sm:text-base md:text-lg text-left">
                 Room Selection
               </th>
             </tr>
@@ -36,773 +36,778 @@ export default function BookRoom() {
           <tbody className="text-center">
             {/* Ground Floor */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Ground
               </td>
               {/* Each cell contains a number (colored) and a label underneath  */}
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
             </tr>
 
             {/*  Floor 1  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 1
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-xs text-gray-700">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
             </tr>
 
             {/*  Floor 2  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 2
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
             </tr>
 
             {/*  Floor 3  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 3
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
             </tr>
 
             {/*  Floor 4  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 4
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-xs text-gray-700">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
             </tr>
 
             {/*  Floor 5  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 5
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
             </tr>
 
             {/*  Floor 6  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 6
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
             </tr>
 
             {/*  Floor 7  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 7
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
             </tr>
             {/*  Floor 8  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 8
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#FF0000] text-white flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#FF0000] text-white text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
             </tr>
 
             {/*  Floor 9  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 9
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
             </tr>
 
             {/*  Floor 10  */}
             <tr>
-              <td className="border border-gray-300 px-4 py-1 font-semibold text-xl">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1 font-semibold text-sm sm:text-base md:text-lg">
                 Floor 10
               </td>
 
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   1
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   2
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   3
                 </div>
-                <span className="text-md font-semibold">N/A</span>
+                <span className="text-xs sm:text-sm font-semibold">N/A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   4
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   5
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   6
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   7
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   8
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   9
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
-              <td className="border border-gray-300 px-4 py-1">
-                <div className="w-8 h-8 bg-[#63D820] font-semibold flex items-center justify-center mx-auto">
+              <td className="border border-gray-300 px-2 sm:px-4 py-1">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#63D820] text-xs sm:text-sm font-semibold flex items-center justify-center mx-auto">
                   10
                 </div>
-                <span className="text-md font-semibold">A</span>
+                <span className="text-xs sm:text-sm font-semibold">A</span>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p className="mt-4 text-xl">
-        <span className="text-red-600 font-bold">NOTE:</span> Your reservation
-        is temporarily secured.However, to confirm your booking, payment must be
-        completed within the next 24 hours. Failure to make payment within this
-        period will result in your reservation being automatically cancelled and
-        the room will become available for others to book.
-      </p>
+      {/* Legend */}
+      <div className="mt-4 sm:mt-6 flex flex-wrap justify-center gap-4 text-sm sm:text-base">
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 sm:w-5 sm:h-5 bg-[#FF0000]"></div>
+          <span>Occupied</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 sm:w-5 sm:h-5 bg-[#63D820]"></div>
+          <span>Available</span>
+        </div>
+      </div>
 
-      <p className="mt-4 text-xl">
-        After submission, a confirmation message will be sent to your email to
-        confirm your booking.
-      </p>
-      <div className="flex justify-center py-10">
-        <Link to="/reservationconfirm">
-        <button className="mt-4 bg-[#900633] text-white px-16 py-3 rounded-md">
-          Submit
-        </button>
+      {/* Navigation Buttons */}
+      <div className="mt-6 sm:mt-8 flex justify-center gap-4">
+        <Link to="/applicantInfo">
+          <button className="bg-gray-500 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-gray-600 transition duration-300 text-sm sm:text-base">
+            Back
+          </button>
         </Link>
-        
+        <Link to="/reservationconfirm">
+          <button className="bg-[#800040] text-white px-4 sm:px-6 py-2 rounded-md hover:bg-[#660033] transition duration-300 text-sm sm:text-base">
+            Next
+          </button>
+        </Link>
       </div>
     </section>
    </>
