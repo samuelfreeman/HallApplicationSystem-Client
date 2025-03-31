@@ -43,12 +43,12 @@ const Navbar: React.FC = () => {
               </NavLink>
             </div>
             <div className="hidden md:ml-6 md:flex md:space-x-8 md:p-5 md:justify-end md:w-[800px]">
-              <NavLink
-                to="/comingsoon"
+              <a
+                href="#about"
                 className="text-gray-900 hover:text-gray-700"
               >
                 About
-              </NavLink>
+              </a>
               <NavLink
                 to="/reservation"
                 className="text-gray-900 hover:text-gray-700"
