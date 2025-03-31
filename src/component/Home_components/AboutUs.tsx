@@ -2,7 +2,7 @@
 
 export default function AboutUS(){
   return(
-    <section className="flex items-center justify-center py-10 md:px-[7.5rem] px-5">
+    <section className="flex items-center justify-center py-10 md:px-[7.5rem] px-5 mt-16">
       <div>
       <h1 className="text-3xl font-medium text-center py-5"><span className="underline decoration-[#900633] underline-offset-7">About</span> Us</h1>
       <p className="text-[18px] md:text-[24px] text-center py-5">We simplify student hall living by automating room requests, payments, and allocations, creating a seamless and stress-free experience for both students and administrators. With an intuitive and transparent system, students can easily request their preferred rooms, track payment statuses, and stay informed with real-time updates.</p>

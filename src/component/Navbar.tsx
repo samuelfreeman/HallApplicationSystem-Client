@@ -45,9 +45,9 @@ const Navbar: React.FC = () => {
             </div>
             {/* Desktop Navigation */}
             <div className="hidden md:ml-6 md:flex md:space-x-8 md:p-5 md:justify-end md:w-[800px]">
-              <a href="#about" className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+              <NavLink to="/about" className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 About
-              </a>
+              </NavLink>
               <NavLink to="/reservation" className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Reservation
               </NavLink>
