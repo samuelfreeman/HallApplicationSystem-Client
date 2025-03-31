@@ -9,8 +9,7 @@ function Complaint() {
 
             <section className="mt-4 sm:mt-6 mx-4 sm:mx-6 md:mx-8 lg:mx-20 font-Inter p-2 sm:p-6 pb-8 sm:pb-12">
                 <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
-                    Report issues related to your hall accommodation. Our team will respond as soon as possible.
-                </p> 
+                    Report issues related to your hall accommodation. Our team will respond as soon as possible</p> 
 
                 <h2 className="text-xl sm:text-2xl font-semibold font-Inter mb-4 sm:mb-6">Complaint Submission Form</h2>
 
