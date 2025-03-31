@@ -9,21 +9,14 @@ import Footer from "@/component/Footer";
 // import FAQ from "../component/FAQ";
 // import Footer from "../component/Footer";
 const HomePage = () => {
-
-
-
-
   return (
-    <div className="">
+    <div className="w-full overflow-x-hidden">
       <Navbar />
-      <Hero />
-      <HowItWorks/>
-      <About />
-      {/* <Toaster />
-      <Testimonials/>
-      <FAQ/>
-      <ContactUsForm/>
-      <Footer/> */}
+      <main className="">
+        <Hero />
+        <HowItWorks/>
+        <About />
+      </main>
       <Footer/>
     </div>
   );

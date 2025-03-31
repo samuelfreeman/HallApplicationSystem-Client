@@ -11,7 +11,7 @@ function Payment_Confirmation() {
         <>
            <Navbar/>
             <NavInfo title="Payment Confirmation" />
-            <section className="my-[40px] ml-[100px] mr-[150px] font-Inter bg-white">
+            <section className="my-[40px] lg:ml-[100px] lg:mr-[150px] font-Inter bg-white">
                 
                 <div className="bg-[#FBFBFB] mb-[50px] p-[30px]">
                     <div className="flex flex-col gap-3">

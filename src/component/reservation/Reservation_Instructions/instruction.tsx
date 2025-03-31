@@ -7,10 +7,10 @@ export default function Instruction(){
        <>
        <Navbar/>
        <NavInfo title="Reservation"/>
-        <section className="mt-5 px-20">
-            <div className="text-2xl p-6 bg-white">
-                <h2 className="mb-4">Room Reservation Instructions</h2>
-                <ul className="list-disc pl-6 space-y-4">
+        <section className="mt-5 px-4 sm:px-6 md:px-8 lg:px-20">
+            <div className="text-base sm:text-lg md:text-xl lg:text-2xl p-4 sm:p-6 bg-white rounded-lg shadow-sm">
+                <h2 className="mb-4 font-semibold">Room Reservation Instructions</h2>
+                <ul className="list-disc pl-4 sm:pl-6 space-y-3 sm:space-y-4 text-sm sm:text-base">
                     <li>Click on <span className="font-bold">next</span> at the button down below.</li>
                     <li>Fill all the necessary information on the form.</li>
                     <li>Select from the available rooms.</li>
@@ -26,14 +26,14 @@ export default function Instruction(){
                     </li>
                 </ul>
             
-                <div className="bg-red-100 text-red-700 px-4 py-3 mt-4 rounded-md border border-red-400">
+                <div className="bg-red-100 text-red-700 px-3 sm:px-4 py-2 sm:py-3 mt-4 rounded-md border border-red-400 text-sm sm:text-base">
                     <strong>NOTE:</strong> You can only book your room once as far as your stay in the school is concerned, 
                     so please ensure you decide before beginning the booking process. Thank you!
                 </div>
             
-                <div className="text-center">
+                <div className="text-center mt-6 sm:mt-8">
                    <Link to="/applicantInfo">
-                   <button className="mt-6 bg-[#800040] text-white px-6 py-2 w-44 rounded-md hover:bg-[#660033] transition duration-300">
+                   <button className="bg-[#800040] text-white px-6 py-2 w-36 sm:w-44 rounded-md hover:bg-[#660033] transition duration-300 text-sm sm:text-base">
                         Next
                     </button>
                    </Link>

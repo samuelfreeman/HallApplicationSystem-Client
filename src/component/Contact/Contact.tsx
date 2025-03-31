@@ -6,7 +6,7 @@ function Contact() {
         <>
             <Navbar />
             <NavInfo title="Contact" />
-            <section className="my-[25px] ml-[100px] mr-[70px] font-Inter">
+            <section className="my-[25px] lg:ml-[100px] px-10 lg:mr-[70px] font-Inter">
                 <h2 className="text-2xl font-semibold font-Inter">Hall Admin Contact Info</h2>
 
                 <hr className="my-[5px] border-gray-200 border" />

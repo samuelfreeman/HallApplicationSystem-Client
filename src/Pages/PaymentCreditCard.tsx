@@ -9,13 +9,13 @@ export default function PaymentCreditCard() {
      <Navbar/>
      <NavInfo title="Payment Information"/>
 
-      <div className="px-40 py-5">
+      <div className="lg:px-40 py-5 px-4">
         <h1 className="text-[30px] font-[700] pt-4 pb-9">Payment Details</h1>
 
         {/* select card or momo */}
-        <div className="flex items-center gap-16 pb-7">
+        <div className="flex items-center gap-3 lg:gap-16 pb-7">
           {/* credit card */}
-          <div className="border-[1px] border-[#900633] py-5 px-2 w-[200px] h-[128px] rounded-sm">
+          <div className="border-[1px] border-[#900633] py-5 px-2 w-[170px] lg:w-[200px] h-[128px] rounded-sm">
             <input type="radio" className="flex float-right -mt-3" />
             <img
               src="../../public/assets/icons/credit-card.png"
@@ -26,7 +26,7 @@ export default function PaymentCreditCard() {
           </div>
 
           {/* momo */}
-          <div className="border-[1px] border-[#CFCFCF] py-5 px-2 w-[200px] h-[128px] rounded-sm">
+          <div className="border-[1px] border-[#CFCFCF] py-5 px-2 w-[170px] lg:w-[200px] h-[128px] rounded-sm">
             <input type="radio" className="flex float-right -mt-3" />
             <img
               src="../../public/assets/icons/momo.png"
@@ -46,7 +46,7 @@ export default function PaymentCreditCard() {
               <label htmlFor="cardNumber">CREDIT CARD NUMBER</label>
               <input
                 type="number"
-                className="border-[1px] border-[#4A4A4A] w-full md:w-[800px] h-[45px] rounded-[3px]"
+                className="border-[1px] border-[#4A4A4A] w-full lg:w-[800px] h-[45px] rounded-[3px]"
                 required
               />
             </div>
