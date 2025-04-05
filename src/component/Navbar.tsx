@@ -66,12 +66,16 @@ const Navbar: React.FC = () => {
           {/* Desktop Auth Buttons */}
           {showRegister && (
             <div className="hidden md:flex items-center space-x-4">
+              <NavLink to="/signup">
               <Button className="bg-black text-white hover:bg-gray-800">
-                <NavLink to="/signup">Register</NavLink>
+                Register
               </Button>
+              </NavLink>
+              <NavLink to="/login">
               <Button className="bg-black text-white hover:bg-gray-800">
-                <NavLink to="/login">Login</NavLink>
+               Login
               </Button>
+              </NavLink>
             </div>
           )}
           {!showRegister && !showLogin && (
@@ -142,12 +146,15 @@ const Navbar: React.FC = () => {
           </NavLink>
           {showRegister && (
             <div className="px-3 py-2 space-y-2">
-              <Button className="w-full bg-black text-white hover:bg-gray-800">
-                <NavLink to="/signup" onClick={() => setIsOpen(false)}>Register</NavLink>
+               <NavLink to="/signup" onClick={() => setIsOpen(false)}><Button className="w-full bg-black text-white hover:bg-gray-800">
+               Register
               </Button>
+              </NavLink>
+              <NavLink to="/login" onClick={() => setIsOpen(false)}>
               <Button className="w-full bg-black text-white hover:bg-gray-800">
-                <NavLink to="/login" onClick={() => setIsOpen(false)}>Login</NavLink>
+             Login
               </Button>
+              </NavLink>
             </div>
           )}
           {!showRegister && !showLogin && (

@@ -1,15 +1,7 @@
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppDispatch, useAppSelector } from "../state/hooks";
-import { login } from "../api/student/thunk";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink } from "react-router";
 import { LoginInput, loginSchema } from "../validations/authValidation";
-import { useToast } from "@/hooks/use-toast"
-
-
-
-
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -22,25 +14,21 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useEffect, useState } from "react";
+import { useLoginUser } from "@/Pages/auth/services/queries";
 
 
 
 export function LoginForm() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.matchMedia("(min-width: 1024px)").matches);
+  const { mutateAsync: loginUser, isLoading  } = useLoginUser();
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
     const handler = (e: MediaQueryListEvent) => setIsLargeScreen(e.matches);
-
-    // Add the event listener
     mediaQuery.addEventListener("change", handler);
 
     // Cleanup on unmount
     return () => mediaQuery.removeEventListener("change", handler);
   }, [isLargeScreen]); // Check if large screen
-  const { toast } = useToast()
-  const dispatch = useAppDispatch()
-  const navigate = useNavigate();
-  const { loading, error } = useAppSelector((state) => state.student);
 
   const form = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
@@ -51,29 +39,15 @@ export function LoginForm() {
   })
   const { handleSubmit, control } = form;
   // 2. Define a submit handler.
-  async function onSubmit(data: LoginInput) {
-    const result = await dispatch(login(data))
-    console.log(result)
-    if (login.fulfilled.match(result)) {
-      toast({
-        description: "Student sucessfully signed up",
-        duration: 2000
-      })
-      navigate("/");
-    } else {
-      console.log(error)
-      toast({
-        variant: "destructive",
-        title: "Failed to Login ",
-
-        description: error,
-      })
+  async function onSubmit(values: LoginInput ) {
+    try {
+      await loginUser({ data: values });
+    } catch (error) {
+      console.error("Form submission error", error);
+    } finally {
+      form.reset();
     }
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(data)
   }
-
   return (
     <>
       {isLargeScreen ? (<Form {...form}>
@@ -119,8 +93,8 @@ export function LoginForm() {
             <p>Do not have an account? <NavLink className="underline underline-offset-1" to="/signup">SignUp</NavLink></p>
             <p className="text-right underline"><NavLink to="/forgot-password">Forgot password?</NavLink></p>
 
-            <Button type="submit" disabled={loading} className="p-2 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2  lg:border-black mb-2">
-              {loading ? "Logging in..." : "Login"}
+            <Button type="submit" disabled={isLoading} className="p-2 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2  lg:border-black mb-2">
+              {isLoading ? "Logging in..." : "Login"}
             </Button>
 
 
@@ -171,8 +145,8 @@ export function LoginForm() {
               <p>Do not have an account? <NavLink className="underline underline-offset-1" to="/signup">SignUp</NavLink></p>
               <p className="text-right underline"><NavLink to="/forgot-password">Forgot password?</NavLink></p>
 
-              <Button type="submit" disabled={loading} className="p-2 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2  lg:border-black mb-2">
-                {loading ? "Logging in..." : "Login"}
+              <Button type="submit" disabled={isLoading} className="p-2 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2  lg:border-black mb-2">
+                {isLoading ? "Logging in..." : "Login"}
               </Button>
 
 

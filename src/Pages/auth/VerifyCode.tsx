@@ -1,5 +1,5 @@
 
-import Verifycode from '../component/Verify-code'
+import Verifycode from '../../component/Verify-code'
 const VerifyCode = () => {
   return (
     <div>

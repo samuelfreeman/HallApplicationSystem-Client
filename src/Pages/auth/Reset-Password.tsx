@@ -1,5 +1,5 @@
 
-import Resetpass from '../component/Reset-password'
+import Resetpass from '../../component/Reset-password'
 
 const ResetPassword = () => {
     return (

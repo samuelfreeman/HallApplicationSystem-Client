@@ -1,7 +1,7 @@
 
-import checkmark from '../../../public/icons/CheckMark.png'
-import appstore from '../../../public/icons/App_Store.png'
-import googleplay from '../../../public/icons/Google_Play.png'
+import checkmark from '@/assets/icons/CheckMark.png'
+import appstore from '@/assets/icons/App_Store.png'
+import googleplay from '@/assets/icons/Google_Play.png'
 import { Link } from "react-router";
 import NavInfo from "../NavInfo.tsx";
 import Navbar from '../Navbar.tsx';

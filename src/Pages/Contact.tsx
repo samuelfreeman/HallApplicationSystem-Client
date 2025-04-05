@@ -1,4 +1,4 @@
-import Contact from "../components/Contact/Contact.tsx";
+import Contact from "../component/Contact/Contact.tsx";
 
 function ContactPage() {
     return (

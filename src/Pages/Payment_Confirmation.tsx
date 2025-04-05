@@ -1,4 +1,4 @@
-import PaymentConfirmation from "../components/Payment_Confirmation/Payment_Confirmation.tsx";
+import PaymentConfirmation from "../component/Payment_Confirmation/Payment_Confirmation.tsx";
 
 function PaymentConfirmationPage() {
     return (

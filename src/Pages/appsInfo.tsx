@@ -1,4 +1,4 @@
-import AppsInfo from "../components/reservation/Applicants_Info/appsInfo";
+import AppsInfo from "../component/reservation/Applicants_Info/appsInfo";
 
 function AppsInfoPage() {
     return (

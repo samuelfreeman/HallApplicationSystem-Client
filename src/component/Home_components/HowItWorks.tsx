@@ -2,7 +2,7 @@ import HIW from "../HIW";
 
 export default function HowItWorks(){
   return(
-    <section className="flex flex-col items-center justify-center py-12 md:py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+    <section className="flex flex-col w-full items-center justify-center py-12 md:py-20    overflow-x-hidden">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-center">
         <span className="underline decoration-[#900633] underline-offset-7">How It</span> Works
       </h1>

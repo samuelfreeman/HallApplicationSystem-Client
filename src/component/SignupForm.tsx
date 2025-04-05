@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppDispatch, useAppSelector } from "../state/hooks";
-import { signUp } from "../api/student/thunk";
-import { NavLink, useNavigate } from "react-router";
+
+
+import { NavLink  } from "react-router";
 import { SignUpInput, signUpSchema } from "../validations/authValidation";
 import { Button } from "@/components/ui/button"
 import {
@@ -17,11 +17,12 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { useToast } from "@/hooks/use-toast"
 
+import { useSignupUser } from "@/Pages/auth/services/queries";
 
 const SignUpForm: React.FC = () => {
-
+    const {mutateAsync :CreateStudent ,isLoading } = useSignupUser()
+    
     const [isLargeScreen, setIsLargeScreen] = useState(window.matchMedia("(min-width: 1024px)").matches);
     useEffect(() => {
         const mediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -34,10 +35,9 @@ const SignUpForm: React.FC = () => {
         return () => mediaQuery.removeEventListener("change", handler);
     }, []); // Check if large screen
 
-    const dispatch = useAppDispatch();
-    const { toast } = useToast()
-    const navigate = useNavigate();
-    const { loading, error } = useAppSelector((state) => state.student);
+    
+    
+    
 
 
 
@@ -48,34 +48,19 @@ const SignUpForm: React.FC = () => {
         mode: "onTouched"
     })
     async function onSubmit(values: SignUpInput) {
-        const result = await dispatch(signUp(values));
-        console.log(result)
-        if (signUp.fulfilled.match(result)) {
-            toast({
-                description: "Student sucessfully signed up",
-                duration: 2000
-            })
-            navigate("/");
-        } else {
-            console.log(error)
-            toast({
-                variant: "destructive",
-                description: error,
-            })
+        try {
+            await CreateStudent({data:values})
+            console.log(values)
+        } catch (error) {
+            console.error("Form submission error", error);
+        } finally {
+          form.reset();
         }
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+     
+     
     }
 
-    // const onSubmit: SubmitHandler<SignUpInput> = async (data) => {
-    //     const result = await dispatch(signUp(data));
-    //     console.log(result)
-    //     if (signUp.fulfilled.match(result)) {
-
-    //         navigate("/");
-    //     }
-    // };
+    
     const { handleSubmit, control } = form;
     // Navigation handlers
 
@@ -85,7 +70,7 @@ const SignUpForm: React.FC = () => {
         <>
             {isLargeScreen ? (
                 <Form {...form}  >
-                    
+
                     <form onSubmit={handleSubmit(onSubmit)} className=" bg-[#740938] grid grid-cols-2 shadow-lg  text-white rounded-lg -mt-5 ">
                         <FormLabel className="flex  flex-col  items-center justify-center text-5xl ">
                             <img src="/fav-3078db09.png" className="w-56 h-50" alt="" />
@@ -93,7 +78,7 @@ const SignUpForm: React.FC = () => {
                         <div className=" grid grid-cols-2  p-10 gap-7 gap-x-5  gap-y-1">
 
 
-                            <FormField 
+                            <FormField
                                 control={control}
                                 name="studentId"
                                 render={({ field }) => (
@@ -245,7 +230,7 @@ const SignUpForm: React.FC = () => {
                             />
                             <p className="block  ">Already have an account ? <NavLink className='underline underline-offset-1 ' to="/login">login</NavLink></p>
                             <Button type="submit" className="col-span-2 bg-white text-black hover:text-white">
-                                {loading ? "Signing up..." : "Signup"}
+                                {isLoading ? "Signing up..." : "Signup"}
                             </Button>
                         </div>
                     </form>
@@ -438,10 +423,10 @@ const SignUpForm: React.FC = () => {
 
                                 <Button
                                     type="submit"
-                                    disabled={loading}
+                                    disabled={isLoading}
                                     className="px-4 py-2 mt-6 w-full bg-white text-black rounded-md hover:bg-[#740938] hover:text-white border-2 "
                                 >
-                                    {loading ? "Signing up..." : "Submit"}
+                                    {isLoading ? "Signing up..." : "Submit"}
                                 </Button>
                             </div>
 

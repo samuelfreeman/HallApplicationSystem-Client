@@ -1,6 +1,6 @@
 
-import Alert from "../../public/icons/alert.png";
-import Close from "../../public/icons/close.png";
+import Alert from "@/assets/icons/alert.png";
+import Close from "@/assets/icons/close.png";
 import { Link } from "react-router-dom";
 
 function Modal() {
