@@ -3,6 +3,7 @@ import NavInfo from "../../NavInfo";
 import { Link } from "react-router";
 
 export default function AppsInfo(){
+const student  = JSON.parse(localStorage.getItem("student") || "{}");
     return(
         <>
        <Navbar/>
@@ -13,29 +14,26 @@ export default function AppsInfo(){
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block font-bold mb-3">First Name</label>
-                    <input type="text" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]" />
+                    <label className="block font-bold mb-3">Full Name</label>
+                    <input type="text"  className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]" value={student.fullName} />
                 </div>
-                <div>
-                    <label className="block text-gray-700 font-bold mb-3">Last Name</label>
-                    <input type="text" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]"/>
-                </div>
+               
                 <div>
                     <label className="block font-bold mb-3">Email Address</label>
-                    <input type="email" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]"/>
+                    <input type="email" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]" value={student.email}/>
                 </div>
                 <div>
                     <label className="block font-bold mb-3">Student ID / Index Number</label>
-                    <input type="text" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]"/>
+                    <input type="text" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]" value = {student.studentId}/>
                 </div>
                 <div>
                     <label className="block font-bold mb-3">Phone Number</label>
-                    <input type="tel" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]"/>
+                    <input type="tel" className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]" value={student.telephone}/>
                 </div>
                 <div>
                     <label className="block font-bold mb-3">Gender</label>
                     <select className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]">
-                        <option>Select</option>
+                        <option>{student.gender}</option>
                         <option>Male</option>
                         <option>Female</option>
                         <option>Other</option>
@@ -60,7 +58,7 @@ export default function AppsInfo(){
                     <div>
                         <label className="block text-gray-700 font-bold mb-3">Level</label>
                         <select className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]">
-                            <option>Select</option>
+                            <option>{student.level}</option>
                             <option>100</option>
                             <option>200</option>
                             <option>300</option>

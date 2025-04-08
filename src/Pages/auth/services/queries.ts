@@ -97,6 +97,7 @@ export const useStudentAuth = () => {
     },
     onSuccess: data => {
       const { fullName } = data
+    localStorage.setItem("student", JSON.stringify(data));
       setName(fullName)
     },
     onError: (error: Errors) => {
