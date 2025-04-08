@@ -1,11 +1,16 @@
 import { useStudentAuth } from "@/Pages/auth/services/queries";
 import { useStudentName } from "@/store/use-auth-store";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 
 
 export default function NavInfo(probs:any){
+  const navigate = useNavigate();
       const { fullName } = useStudentName();
+      if(!fullName || fullName === undefined){
+        navigate("/login")
+      }
       const { mutate: fetchStudent, isLoading, isError } = useStudentAuth();
       useEffect(() => {
           // Automatically fetch student data as soon as the component mounts

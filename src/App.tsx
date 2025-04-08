@@ -10,7 +10,6 @@ import ResetPassword from '@/Pages/auth/Reset-Password'
 import Instruction from './component/reservation/Reservation_Instructions/instruction'
 import AppsInfo from './component/reservation/Applicants_Info/appsInfo'
 import BookRoom from './component/reservation/Book_Room/bookRoom'
-
 import PaymentCreditCard from './Pages/PaymentCreditCard'
 import ReservationConfirm from './Pages/ReservationConfirm'
 import RoomReservation from './Pages/RoomReservation'

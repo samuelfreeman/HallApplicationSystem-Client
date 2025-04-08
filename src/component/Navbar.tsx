@@ -29,6 +29,9 @@ const Navbar: React.FC = () => {
     const token = localStorage.getItem("token");
     if (token) {
       localStorage.removeItem("token");
+      localStorage.removeItem("student");
+      localStorage.removeItem("id")
+      localStorage.removeItem("fullName")
       navigate("/login");
     }
   };
