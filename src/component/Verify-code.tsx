@@ -50,8 +50,8 @@ const VerifyCode: React.FC = () => {
       };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h2 className="text-xl font-bold mb-4 text-black">Verify Code</h2>
+        <div className="flex  flex-col items-center justify-center h-screen">
+            <h2 className="text-xl font-bold mb-4 text-white ">Verify Code</h2>
             <OtpInput
                 value={code}
                 onChange={handleChange}

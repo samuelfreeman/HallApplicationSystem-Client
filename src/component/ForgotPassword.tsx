@@ -60,7 +60,7 @@ const ForgotPassword: React.FC = () => {
             <div className=' block '>
 
                 <label htmlFor="email" className='text-gray-100'>Email:</label>
-                <input id='email' type="email" className=" mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black form-input " {...register('email')} />
+                <input id='email' type="email" className=" mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 text-black focus:ring-0 focus:border-black form-input " {...register('email')} />
                 {errors.email && <p className='-mb-5 text-red-600 text-sm'>{errors.email.message}</p>}
 
 

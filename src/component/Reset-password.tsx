@@ -53,12 +53,12 @@ const Resetpass: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="prose border-2 border-black rounded-md grid grid-cols-1 gap-6 w-[410px] h-auto p-10"
+      className="prose border-2 border-white rounded-md grid grid-cols-1 gap-6 w-[410px] h-auto p-10"
     >
-      <h1 className="text-center pb-3 text-2xl">Reset Your Password</h1>
+      <h1 className="text-center text-white pb-3 text-2xl">Reset Your Password</h1>
 
       <div className="block">
-        <label htmlFor="password" className="text-gray-700">
+        <label htmlFor="password" className="text-white">
           New Password:
         </label>
         <input
@@ -71,7 +71,7 @@ const Resetpass: React.FC = () => {
       </div>
 
       <div className="block">
-        <label htmlFor="confirmPassword" className="text-gray-700">
+        <label htmlFor="confirmPassword" className="text-white">
           Confirm Password:
         </label>
         <input
@@ -85,7 +85,7 @@ const Resetpass: React.FC = () => {
         )}
       </div>
 
-      <p>
+      <p className='text-white'>
         Back to login?{' '}
         <NavLink className="underline underline-offset-1" to="/login">
           Login
