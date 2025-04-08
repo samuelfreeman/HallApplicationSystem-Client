@@ -3,6 +3,7 @@ import NavInfo from "@/component/NavInfo";
 
 
 export default function RoomReservation(){
+  const student  = JSON.parse(localStorage.getItem("student")||"{}" );
   return(
     <>
       <Navbar/>
@@ -12,7 +13,7 @@ export default function RoomReservation(){
         <div className="flex items-center gap-3 border-b-[1px] border-[#CFCFCF] pb-5">
           <p className="flex items-center gap-1 text-[20px] font-[500]">
             <img src="../../public/assets/icons/date.png" alt="" />
-            <span className="">June 15, 2025</span>
+            <span className="">{ new Date().toDateString() }</span>
           </p>
           <span className="text-[20px] font-[500]">|</span>
           <p className="text-[20px] font-[500]">Reservation ID: <span>123456</span></p>
@@ -22,14 +23,14 @@ export default function RoomReservation(){
 
         <div className="flex items-center gap-10 border-b-[1px] border-[#CFCFCF] pb-10">
           <div className="text-[20px]">
-            <p>Full Name: <span>Ivy Ahiamadzor</span></p>
-            <p className="py-4">Index number / Student ID: <span>1234567890</span></p>
-            <p>Email Address: <span>ivy@gmail.com</span></p>
+            <p>Full Name: <span>{student.fullName}</span></p>
+            <p className="py-4">Index number / Student ID: <span>{student.studentId}</span></p>
+            <p>Email Address: <span>{student.email}</span></p>
           </div>
           <div className="text-[20px]">
             <p>Reservation ID: <span>123456789</span></p>
-            <p className="py-4">Gender: <span>Female</span></p>
-            <p>Phone number: <span>0200000000</span></p>
+            <p className="py-4">Gender: <span>{student.gender}</span></p>
+            <p>Phone number: <span>{student.telephone }</span></p>
           </div>
         </div>
 

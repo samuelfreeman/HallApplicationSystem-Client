@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Navbar from "../../Navbar";
 import NavInfo from "../../NavInfo";
 import { Link } from "react-router";
-
+import Modal from "@/component/Popup";
 export default function BookRoom() {
+  const [showModal, setShowModal] = useState(false);  
   return (
    <>
    <Navbar/>
@@ -803,11 +805,13 @@ export default function BookRoom() {
             Back
           </button>
         </Link>
-        <Link to="/reservationconfirm">
-          <button className="bg-[#800040] text-white px-4 sm:px-6 py-2 rounded-md hover:bg-[#660033] transition duration-300 text-sm sm:text-base">
-            Next
+        
+          <button onClick={()=>setShowModal(true)} className="bg-[#800040] text-white px-4 sm:px-6 py-2 rounded-md hover:bg-[#660033] transition duration-300 text-sm sm:text-base">
+          Submit
+
           </button>
-        </Link>
+          <Modal visible={showModal} onClose={() => setShowModal(false)}  />
+        
       </div>
     </section>
    </>

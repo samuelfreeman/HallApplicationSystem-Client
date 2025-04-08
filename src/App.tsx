@@ -10,7 +10,7 @@ import ResetPassword from '@/Pages/auth/Reset-Password'
 import Instruction from './component/reservation/Reservation_Instructions/instruction'
 import AppsInfo from './component/reservation/Applicants_Info/appsInfo'
 import BookRoom from './component/reservation/Book_Room/bookRoom'
-import Modal from './component/Popup'
+
 import PaymentCreditCard from './Pages/PaymentCreditCard'
 import ReservationConfirm from './Pages/ReservationConfirm'
 import RoomReservation from './Pages/RoomReservation'
@@ -34,7 +34,7 @@ const App: React.FC = () => {
         <Route path='/reservation' element={<Instruction/>}/>
         <Route path='/applicantInfo' element={<AppsInfo/>}/>
         <Route path='/bookroom' element={<BookRoom/>}/>
-        <Route path='/popup' element={<Modal/>}/>
+        
         <Route path='/reservationconfirm' element={<ReservationConfirm/>}/>
         <Route path='/payment' element={<PaymentCreditCard/>}/>
         <Route path='/later' element={<RoomReservation/>}/>

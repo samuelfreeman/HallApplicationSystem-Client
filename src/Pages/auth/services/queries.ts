@@ -24,6 +24,7 @@ export const useLoginUser = () => {
       }
     },
     onSuccess: (data) => {
+      console.log("onsuccess Data :",data)
       const { token } = data
       setToken(token)
       toast({

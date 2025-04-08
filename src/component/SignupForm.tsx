@@ -3,7 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 
-import { NavLink  } from "react-router";
+import { NavLink } from "react-router";
 import { SignUpInput, signUpSchema } from "../validations/authValidation";
 import { Button } from "@/components/ui/button"
 import {
@@ -21,8 +21,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useSignupUser } from "@/Pages/auth/services/queries";
 
 const SignUpForm: React.FC = () => {
-    const {mutateAsync :CreateStudent ,isLoading } = useSignupUser()
-    
+    const { mutateAsync: CreateStudent, isLoading } = useSignupUser()
+
     const [isLargeScreen, setIsLargeScreen] = useState(window.matchMedia("(min-width: 1024px)").matches);
     useEffect(() => {
         const mediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -35,9 +35,9 @@ const SignUpForm: React.FC = () => {
         return () => mediaQuery.removeEventListener("change", handler);
     }, []); // Check if large screen
 
-    
-    
-    
+
+
+
 
 
 
@@ -45,22 +45,26 @@ const SignUpForm: React.FC = () => {
     const form = useForm<SignUpInput>({
         resolver: zodResolver(signUpSchema),
 
+        defaultValues: {
+            department: "Computer Science",
+        },
+
         mode: "onTouched"
     })
     async function onSubmit(values: SignUpInput) {
         try {
-            await CreateStudent({data:values})
+            await CreateStudent({ data: values })
             console.log(values)
         } catch (error) {
             console.error("Form submission error", error);
         } finally {
-          form.reset();
+            form.reset();
         }
-     
-     
+
+
     }
 
-    
+
     const { handleSubmit, control } = form;
     // Navigation handlers
 
@@ -219,9 +223,16 @@ const SignUpForm: React.FC = () => {
                                     <FormItem>
                                         <FormLabel>Department:</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Enter your department name " {...field} type="text" />
+                                            <select {...field} className="w-full text-gray-500 p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
+                                               <option value="" >Select Your Department</option>
+                                                <option>Faculty of Applied Sciences</option>
+                                                <option>Engineering</option>
+                                                <option>Business</option>
+                                                <option>Science</option>
+                                                <option>Arts</option>
+                                            </select>
                                         </FormControl>
-                                        <FormDescription className="text-gray-300">
+                                        <FormDescription className="text-gray-300 w-64 lg:w-72">
                                             Deparment name can be in full or short form
                                         </FormDescription>
                                         <FormMessage />
@@ -401,14 +412,21 @@ const SignUpForm: React.FC = () => {
                                     </FormItem>
                                 )}
                             />
-                            <FormField
+                         <FormField
                                 control={control}
                                 name="department"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Department:</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Enter your department name " {...field} type="text" />
+                                            <select {...field} className="w-full text-gray-500 p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
+                                               <option value="" >Select Your Department</option>
+                                                <option>Faculty of Applied Sciences</option>
+                                                <option>Engineering</option>
+                                                <option>Business</option>
+                                                <option>Science</option>
+                                                <option>Arts</option>
+                                            </select>
                                         </FormControl>
                                         <FormDescription className="text-gray-300 w-64 lg:w-72">
                                             Deparment name can be in full or short form

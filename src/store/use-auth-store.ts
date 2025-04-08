@@ -3,7 +3,7 @@ import { create } from "zustand";
 export const useAuthTokenStore = create<AuthToken>((set) => ({
   token: localStorage.getItem("token") || "null",
   setToken: (token: string) =>
-     JSON.stringify(token),
+     JSON.stringify(localStorage.setItem("token",token)),
   clearToken: () => {
     localStorage.removeItem("token");
     set({ token: "" });
