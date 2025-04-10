@@ -84,7 +84,6 @@ const student  = JSON.parse(localStorage.getItem("student") || "{}");
                 </Link>
             </div>
         </div>
-        
     </section>
     </>
     )

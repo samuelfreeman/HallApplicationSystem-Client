@@ -7,6 +7,7 @@ export const studentLogin = async (data: LoginStudent) => {
 
 export const studentSignUp = async (data: CreateStudent) => {
     const response = await api.post("/student/register", data);
+    console.log(response.data)
     return response.data;
 }
 

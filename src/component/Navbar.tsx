@@ -4,10 +4,12 @@ import { NavLink } from "react-router";
 import { useNavigate } from "react-router";
 import { Menu, X } from "lucide-react";
 
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showRegister, setShowUp] = useState(true);
   const [showLogin, setShowLogin] = useState(true);
+  
 
   const navigate = useNavigate();
   const toggleMenu = () => {
@@ -15,8 +17,8 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    const student = localStorage.getItem("student");
-    if (student) {
+    const token = localStorage.getItem("token");
+    if (token) {
       setShowUp(false);
       setShowLogin(false);
     } else {

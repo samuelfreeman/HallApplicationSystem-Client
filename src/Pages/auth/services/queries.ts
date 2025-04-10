@@ -53,7 +53,8 @@ export const useSignupUser = () => {
     mutationFn: async ({ data }: { data: CreateStudent }) => {
       try {
         const response = await studentSignUp(data);
-        setId(response.result.id);
+        console.log(response)
+        setId(response.result.id || "null");
 
         return response;
       } catch (error) {
@@ -72,7 +73,7 @@ export const useSignupUser = () => {
     },
     onError: (error: Errors) => {
       const { message, status } = error.response.data;
-
+console.log(error.response)
 
       console.log(error.response)
       toast({
