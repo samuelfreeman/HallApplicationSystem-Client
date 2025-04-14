@@ -48,7 +48,7 @@ const student  = JSON.parse(localStorage.getItem("student") || "{}");
                     <div>
                         <label className="block font-bold mb-3">Program of Study</label>
                         <select className="w-full p-2 border rounded-md focus:ring focus:ring-[#660033]">
-                            <option>Select</option>
+                        <option>{student.department}</option>
                             <option>Engineering</option>
                             <option>Business</option>
                             <option>Science</option>
