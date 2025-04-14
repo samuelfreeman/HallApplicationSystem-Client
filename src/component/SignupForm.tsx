@@ -206,7 +206,7 @@ const SignUpForm: React.FC = () => {
                                     <FormItem>
                                         <FormLabel>Level:</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Enter your level" type="number"
+                                            <Input placeholder="Enter your level" type="number" 
                                                 value={value}
                                                 onChange={(e) => onChange(Number(e.target.value))}
                                             />
@@ -223,8 +223,8 @@ const SignUpForm: React.FC = () => {
                                     <FormItem>
                                         <FormLabel>Department:</FormLabel>
                                         <FormControl>
-                                            <select {...field} className="w-full text-gray-500 p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
-                                               <option value="" >Select Your Department</option>
+                                            <select {...field} className="w-full text-white p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
+                                                <option value="" >Select Your Department</option>
                                                 <option>Faculty of Applied Sciences</option>
                                                 <option>Engineering</option>
                                                 <option>Business</option>
@@ -412,15 +412,15 @@ const SignUpForm: React.FC = () => {
                                     </FormItem>
                                 )}
                             />
-                         <FormField
+                            <FormField
                                 control={control}
                                 name="department"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Department:</FormLabel>
                                         <FormControl>
-                                            <select {...field} className="w-full text-gray-500 p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
-                                               <option value="" >Select Your Department</option>
+                                            <select {...field} className="w-full text-white p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
+                                                <option value="" >Select Your Department</option>
                                                 <option>Faculty of Applied Sciences</option>
                                                 <option>Engineering</option>
                                                 <option>Business</option>

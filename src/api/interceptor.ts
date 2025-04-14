@@ -1,6 +1,6 @@
 import axios from "axios";
 const prod = "https://hallapplicationsystem.onrender.com/"
-// const dev = "http://localhost:3000"
+//  const dev = "http://localhost:3000"
 export const api = axios.create({
   baseURL: prod,
   timeout: 100000,

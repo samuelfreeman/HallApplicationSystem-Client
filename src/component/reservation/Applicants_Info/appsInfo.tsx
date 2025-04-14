@@ -10,7 +10,7 @@ const student  = JSON.parse(localStorage.getItem("student") || "{}");
       <NavInfo title="Reservation"/>
         <section className="mt-5">
         <div className="shadow-lg rounded-lg p-6">
-            <h2 className="text-xl font-bold border-b pb-4 mb-4">Applicant’s Information</h2>
+            <h2 className="md:text-xl font-bold border-b pb-4 mb-4">Applicant’s Information</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>

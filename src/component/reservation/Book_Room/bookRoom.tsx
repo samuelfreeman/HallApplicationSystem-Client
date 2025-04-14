@@ -24,6 +24,7 @@ const getColor = (status: string) => {
 // student id 
 const student = JSON.parse(localStorage.getItem("student") || "{}");
 const studentID = student.studentId;
+console.log( studentID)
 
 export default function BookRoom() {
 
@@ -46,7 +47,7 @@ export default function BookRoom() {
     fetchRooms();
   }, []);
 
-  const blockOptions = ["A", "B", "C"]; // Example block options
+  const blockOptions = ["A", "B", "C","D"]; // Example block options
 
   const filteredData: any = roomData.filter(
     (block: any) => block.name === selectedBlock

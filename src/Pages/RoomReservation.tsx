@@ -41,10 +41,11 @@ export default function RoomReservation(){
         <div className="flex items-center gap-10 border-b-[1px] border-[#CFCFCF] py-5">
           <div className="text-[20px]">
             <p>Room Type: <span>Shared</span></p>
-            <p className="pt-4">Room Assigned: <span>3</span></p>
+            <p className="pt-4">Room Assigned: <span>{student.roomNumber||"3"}</span></p>
           </div>
           <div className="text-[20px]">
-            <p>Floor/Block: <span>9</span></p>
+            <p>Block: <span>{student.blockName||"9"}</span></p>
+            <p>Floor: <span>{student.floorNumber||"9"}</span></p>
             <p className="pt-4">Duration of Stay: <span>8 months</span></p>
            
           </div>
@@ -54,7 +55,8 @@ export default function RoomReservation(){
         <p className="text-[20px] font-[400] tracking-wider">This reservation is valid for 24 hours. Ensure you complete the payment within this time to confirm your booking. Failure to do so will result in cancellation.</p>
         
         <div className="flex items-center justify-center pt-5">
-        <button className="bg-[#900633] px-16 py-2 text-white text-[20px] font-500 rounded-md">Print</button>
+        <button className=" print:hidden bg-[#900633] px-16 py-2 text-white text-[20px] font-500 rounded-md" onClick={() => window.print()}
+        >Print</button>
         </div>
       </div>
     </>

@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  /* Remove arrows in WebKit (Chrome, Safari, Edge) */
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Remove arrows in Firefox */
+  .no-spinner {
+    -moz-appearance: textfield;
+  }
+}
+
 @layer base {
   :root {
     

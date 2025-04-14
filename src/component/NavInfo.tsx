@@ -27,7 +27,7 @@ export default function NavInfo(probs: any) {
   }, [fetchStudent]); // Empty dependency array means it runs once when the component mounts
 
   if (isLoading) {
-    return <section className="bg-[#900633] px-2 lg:px-10 lg:py-1 flex items-center gap-8 py-3 lg:justify-between mt-16 h-[10vh]">
+    return <section className="bg-[#900633] print:hidden  px-2 lg:px-10 lg:py-1 flex items-center gap-8 py-3 lg:justify-between mt-16 h-[10vh]">
       <h1 className="lg:text-[24px] text-sm text-white font-[600]">{probs.title}</h1>
 
       <div className="flex items-center justify-center gap-2 lg:gap-5">

@@ -1,7 +1,71 @@
 import Navbar from "../Navbar.tsx";
 import NavInfo from "../NavInfo.tsx";
 
+import { useState } from "react";
+import { api } from "@/api/interceptor.ts";
+import { toast } from "@/hooks/use-toast.ts";
+
+
+    
+
 function Complaint() {
+
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setLoading(true);
+
+        const formData = new FormData(e.currentTarget);
+
+        const full_name = formData.get("full_name") as string;
+        const room_number = formData.get("room_number") as string;
+        const complaint_category = formData.get("complaint_category") as string;
+        const description = formData.get("description") as string;
+        const file = formData.get("file_upload") as File;
+
+        let imgUrl = "";
+
+        try {
+            if (file && file.size > 0) {
+                // 👉 Mock file upload
+                // TODO: Replace with actual upload logic if using S3 or Firebase
+                const fakeFileUrl = URL.createObjectURL(file); // just for testing preview
+                imgUrl = fakeFileUrl;
+
+                // If you're using an API:
+                // const uploadData = new FormData();
+                // uploadData.append("file", file);
+                // const uploadRes = await api.post("/upload", uploadData);
+                // imgUrl = uploadRes.data.url;
+            }
+
+            // Submit the form to the backend
+            await api.post("/contact-us", {
+                full_name,
+                room_number: parseInt(room_number),
+                complaint_category,
+                imgUrl,
+                description
+            });
+
+            toast({
+                title: " Complaint Sent",
+                variant: "default",
+                
+              });
+            e.currentTarget.reset();
+        } catch (error:any) {
+            
+            toast({
+                title: "Sending Complaint Failed",
+                variant: "destructive",
+                description: error.response.data.message || "User  failed to send complaint",
+              });
+        } finally {
+            setLoading(false);
+        }
+    }
     return (
         <>
             <Navbar />
@@ -15,8 +79,7 @@ function Complaint() {
 
                 <hr className="my-4 sm:my-6 border-gray-200 border" />
 
-                <form className="flex flex-col gap-4 sm:gap-6 py-4 sm:py-6 pr-0 sm:pr-6 border-b-2 border-gray-200">
-                    
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-6 py-4 sm:py-6 pr-0 sm:pr-6 border-b-2 border-gray-200">
                     {/* Form container */}
                     <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 pb-6 sm:pb-8">
                         {/* Left form section */}
@@ -91,7 +154,7 @@ function Complaint() {
                             type="submit" 
                             className="bg-[#900633] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md w-full sm:w-auto min-w-[148px] text-sm sm:text-base hover:bg-[#7a0529] transition-colors duration-200"
                         >
-                            Submit
+                           {loading ? "Loading..." : "Submit"}
                         </button>
                     </div>
                 </form>
