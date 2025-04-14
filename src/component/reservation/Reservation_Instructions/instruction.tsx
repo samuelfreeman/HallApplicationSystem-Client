@@ -16,7 +16,7 @@ export default function Instruction() {
                     <ul className="list-disc pl-4 sm:pl-6 space-y-3 sm:space-y-4 text-sm sm:text-base">
                         <li>Click on <span className="font-bold">next</span> at the button down below.</li>
                         <li>Fill all the necessary information on the form.</li>
-                        <li>Select from the available rooms.</li>
+                        <li>Select from the available rooms. Rooms with <span className="text-green-700 font-bold"> A</span>  means <span className="text-green-700 font-bold">Availlable</span> and<span className="text-red-700 font-bold"> N/A</span>  means <span className="text-red-700 font-bold">Not Available</span></li>
                         <li>Submit your selection by clicking on <strong>submit</strong> and proceed.</li>
                         <li>Print out your reservation slip.</li>
                         <li>
@@ -25,7 +25,7 @@ export default function Instruction() {
                         </li>
                         <li>
                             Submit your reservation slip and pay-in slip (obtained from the bank after payment) at the
-                            <strong>Portal Lodge</strong> to access your room <span className="font-bold">when school reopens.</span>
+                            <strong> Portal Lodge</strong> to access your room <span className="font-bold">when school reopens.</span>
                         </li>
                     </ul>
 

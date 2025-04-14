@@ -8,9 +8,9 @@ import { Link } from "react-router";
 
 const mapStatus = (status: string) => {
   switch (status) {
-    case "available":
+    case "Available":
       return "A";
-    case "not_available":
+    case "Not_Available":
       return "N/A";
     default:
       return status;
@@ -18,7 +18,7 @@ const mapStatus = (status: string) => {
 };
 
 const getColor = (status: string) => {
-  return status === "available" ? "#FF0000" : "#63D820";
+  return status === "Available" ? "#63D820" : "#FF0000";
 
 };
 // student id 
