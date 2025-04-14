@@ -41,11 +41,11 @@ export default function RoomReservation(){
         <div className="flex items-center gap-10 border-b-[1px] border-[#CFCFCF] py-5">
           <div className="text-[20px]">
             <p>Room Type: <span>Shared</span></p>
-            <p className="pt-4">Room Assigned: <span>{student.roomNumber||"3"}</span></p>
+            <p className="pt-4">Room Assigned: <span>{student.roomNumber||"N/A"}</span></p>
           </div>
           <div className="text-[20px]">
-            <p>Block: <span>{student.blockName||"9"}</span></p>
-            <p>Floor: <span>{student.floorNumber||"9"}</span></p>
+            <p>Block: <span>{student.blockName||"N/A"}</span></p>
+            <p>Floor: <span>{student.floorNumber||"N/A"}</span></p>
             <p className="pt-4">Duration of Stay: <span>8 months</span></p>
            
           </div>
