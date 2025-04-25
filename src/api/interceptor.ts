@@ -9,11 +9,11 @@ export const api = axios.create({
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
     "Access-Control-Allow-Headers":
+
     "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
     Authorization: "",
   },
 });
-
 api.interceptors.request.use(
   (config) => {
     const authToken = localStorage.getItem("token");

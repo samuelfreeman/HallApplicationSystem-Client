@@ -32,7 +32,7 @@ export const useLoginUser = () => {
         description: "Student sucessfully logged in!",
         duration: 5000,
       });
-      navigate(`/`);
+      navigate(`/reservation`);
     },
     onError: (error: Errors) => {
       console.log(error)
@@ -69,7 +69,7 @@ export const useSignupUser = () => {
         description: "Student sucessfully signed up!",
         duration: 5000,
       });
-      navigate(`/`);
+      navigate(`/reservation`);
     },
     onError: (error: Errors) => {
       const { message, status } = error.response.data;

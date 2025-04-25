@@ -6,9 +6,11 @@ const Hero = () => {
     <div className="flex items-center justify-center w-full mt-16 overflow-x-hidden hero">
       <div className="bg-black relative w-full h-full pb-5 opacity-80 ">
         {/* Content */}
-        <div className="flex flex-col justify-center text-white gap-7 px-4 sm:px-6 lg:px-8">
-          <h1 className="pt-8  text-center">
-            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold block">
+        <div className="flex flex-col justify-center text-center text-white gap-7 px-4 sm:px-6 lg:px-8">
+          <h1 className = "text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold block pt-8  "> Welcome To Autonomy Hall Application </h1>
+
+          <h5 className="pt-8  text-center">
+            <span className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-bold block">
               <Typewriter
                 words={[
                   "Welcome to Seamless Hall Living",
@@ -24,7 +26,7 @@ const Hero = () => {
                 delaySpeed={1000}
               />
             </span>
-          </h1>
+          </h5>
 
           {/* <h1 className="pt-44 ">Delivering Excellence Through Simplicity</h1> */}
         </div>
