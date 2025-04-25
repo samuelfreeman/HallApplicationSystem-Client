@@ -12,8 +12,8 @@ const Footer = () => {
               <p className="font-medium text-white">Quick Links</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li><a href="/about" className="text-white transition hover:opacity-75">About Us</a></li>
-                <li><a href="/rules" className="text-white transition hover:opacity-75">Hall Rules</a></li>
-                <li><a href="/faqs" className="text-white transition hover:opacity-75">FAQs</a></li>
+                <li><a href="/" className="text-white transition hover:opacity-75">Hall Rules</a></li>
+                <li><a href="/" className="text-white transition hover:opacity-75">FAQs</a></li>
                 <li><a href="/contact" className="text-white transition hover:opacity-75">Contact</a></li>
               </ul>
             </div>
@@ -22,24 +22,24 @@ const Footer = () => {
               <p className="font-medium text-white">Student Resources</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li><a href="/register" className="text-white transition hover:opacity-75">Room Registration</a></li>
-                <li><a href="/payments" className="text-white transition hover:opacity-75">Payment Portal</a></li>
-                <li><a href="/room-status" className="text-white transition hover:opacity-75">Room Availability</a></li>
+                <li><a href="/payment" className="text-white transition hover:opacity-75">Payment Portal</a></li>
+                <li><a href="/bookroom" className="text-white transition hover:opacity-75">Room Availability</a></li>
               </ul>
             </div>
 
             <div>
               <p className="font-medium text-white">Admin</p>
               <ul className="mt-6 space-y-4 text-sm">
-                <li><a href="/admin/dashboard" className="text-white transition hover:opacity-75">Dashboard</a></li>
-                <li><a href="/admin/allocations" className="text-white transition hover:opacity-75">Room Allocations</a></li>
+                <li><a href="/" className="text-white transition hover:opacity-75">Dashboard</a></li>
+                <li><a href="/bookroom" className="text-white transition hover:opacity-75">Room Allocations</a></li>
               </ul>
             </div>
 
             <div>
               <p className="font-medium text-white">Hall Info</p>
               <ul className="mt-6 space-y-4 text-sm">
-                <li><a href="/history" className="text-white transition hover:opacity-75">Hall History</a></li>
-                <li><a href="/team" className="text-white transition hover:opacity-75">Hall Executives</a></li>
+                <li><a href="/receipt" className="text-white transition hover:opacity-75">Booking Receipt</a></li>
+                <li><a href="/about" className="text-white transition hover:opacity-75">Hall Executives</a></li>
               </ul>
             </div>
           </div>
