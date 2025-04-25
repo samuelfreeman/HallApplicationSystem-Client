@@ -34,6 +34,7 @@ const Navbar: React.FC = () => {
       localStorage.removeItem("student");
       localStorage.removeItem("id")
       localStorage.removeItem("fullName")
+      localStorage.removeItem("email")
       navigate("/login");
     }
   };
