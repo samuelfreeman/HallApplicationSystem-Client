@@ -22,9 +22,7 @@ const getColor = (status: string) => {
 
 };
 // student id 
-const student = JSON.parse(localStorage.getItem("student") || "{}");
-const studentID = student.studentId;
-console.log( studentID)
+
 
 export default function BookRoom() {
 
@@ -34,6 +32,10 @@ export default function BookRoom() {
   const [selectedBlock, setSelectedBlock] = useState("A");
   const [modalVisible, setModalVisible] = useState(false); // State for modal visibility
 
+  const student = JSON.parse(localStorage.getItem("student") || "{}");
+console.log(student)
+ const studentID = student.studentId;
+console.log( studentID)
   useEffect(() => {
     const fetchRooms = async () => {
       try {
