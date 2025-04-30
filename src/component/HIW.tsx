@@ -9,7 +9,7 @@ import {
 const HIW = () => {
   return (
     <div className='w-full text-center py-8 md:py-12 bg-black'>
-      <h1 className='text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-4'>How It Works</h1>
+      
       <h2 className='text-sm sm:text-base md:text-lg py-3 text-red-600 font-bold tracking-wider'>
         REQUEST {">"} PAYMENT {">"} REVIEW {">"} REPEAT
       </h2>
