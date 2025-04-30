@@ -202,14 +202,18 @@ const SignUpForm: React.FC = () => {
                                 control={control}
                                 name="level"
 
-                                render={({ field: { value, onChange } }) => (
+                                render={({ field} ) => (
                                     <FormItem>
-                                        <FormLabel>Level:</FormLabel>
+                                        <FormLabel className="pt-4">Level:</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Enter your level" type="number" 
-                                                value={value}
-                                                onChange={(e) => onChange(Number(e.target.value))}
-                                            />
+                                        <select {...field} typeof="number"  className="w-full text-white p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
+                                                <option value="" >Select Your Level</option>
+                                                <option>100</option>
+                                                <option>200</option>
+                                                <option>400</option>
+                                                <option>500</option>
+                                                <option>600</option>
+                                            </select>
                                         </FormControl>
 
                                         <FormMessage />
@@ -398,18 +402,22 @@ const SignUpForm: React.FC = () => {
                                 control={control}
                                 name="level"
 
-                                render={({ field: { value, onChange } }) => (
-                                    <FormItem className="pt-4">
-                                        <FormLabel>Level:</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="Enter your level" type="number"
-                                                value={value}
-                                                onChange={(e) => onChange(Number(e.target.value))}
-                                            />
-                                        </FormControl>
+                                render={({ field}) => (
+                                    <FormItem>
+                                    <FormLabel className="pt-4">Level:</FormLabel>
+                                    <FormControl>
+                                    <select {...field} typeof="number"  className="w-full text-white p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
+                                            <option value="" >Select Your Level</option>
+                                            <option>100</option>
+                                            <option>200</option>
+                                            <option>400</option>
+                                            <option>500</option>
+                                            <option>600</option>
+                                        </select>
+                                    </FormControl>
 
-                                        <FormMessage />
-                                    </FormItem>
+                                    <FormMessage />
+                                </FormItem>
                                 )}
                             />
                             <FormField
