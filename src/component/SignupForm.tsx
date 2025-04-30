@@ -198,28 +198,31 @@ const SignUpForm: React.FC = () => {
                                     </FormItem>
                                 )}
                             />
-                            <Controller
-                                control={control}
-                                name="level"
-
-                                render={({ field} ) => (
-                                    <FormItem>
-                                        <FormLabel className="pt-4">Level:</FormLabel>
-                                        <FormControl>
-                                        <select {...field} typeof="number"  className="w-full text-white p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
-                                                <option value="" >Select Your Level</option>
-                                                <option>100</option>
-                                                <option>200</option>
-                                                <option>400</option>
-                                                <option>500</option>
-                                                <option>600</option>
-                                            </select>
-                                        </FormControl>
-
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
+                          <Controller
+  control={control}
+  name="level"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel className="pt-4">Level:</FormLabel>
+      <FormControl>
+        <select
+          {...field}
+          onChange={(e) => field.onChange(Number(e.target.value))} // Convert to number
+          className="w-full text-white p-2 border rounded-md bg-[#740938] border-white focus:ring focus:ring-white"
+        >
+          <option value="">Select Your Level</option>
+          <option value={100}>100</option>
+          <option value={200}>200</option>
+          <option value={300}>300</option>
+          <option value={400}>400</option>
+          <option value={500}>500</option>
+          <option value={600}>600</option>
+        </select>
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
                             <FormField
                                 control={control}
                                 name="department"
@@ -399,27 +402,30 @@ const SignUpForm: React.FC = () => {
 
                             {/* level */}
                             <Controller
-                                control={control}
-                                name="level"
-
-                                render={({ field}) => (
-                                    <FormItem>
-                                    <FormLabel className="pt-4">Level:</FormLabel>
-                                    <FormControl>
-                                    <select {...field} typeof="number"  className="w-full text-white p-2 border rounded-md  bg-[#740938] border-white focus:ring focus:ring-white ">
-                                            <option value="" >Select Your Level</option>
-                                            <option>100</option>
-                                            <option>200</option>
-                                            <option>400</option>
-                                            <option>500</option>
-                                            <option>600</option>
-                                        </select>
-                                    </FormControl>
-
-                                    <FormMessage />
-                                </FormItem>
-                                )}
-                            />
+  control={control}
+  name="level"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel className="pt-4">Level:</FormLabel>
+      <FormControl>
+        <select
+          {...field}
+          onChange={(e) => field.onChange(Number(e.target.value))} // Convert to number
+          className="w-full text-white p-2 border rounded-md bg-[#740938] border-white focus:ring focus:ring-white"
+        >
+          <option value="">Select Your Level</option>
+          <option value={100}>100</option>
+          <option value={200}>200</option>
+          <option value={300}>300</option>
+          <option value={400}>400</option>
+          <option value={500}>500</option>
+          <option value={600}>600</option>
+        </select>
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
                             <FormField
                                 control={control}
                                 name="department"
