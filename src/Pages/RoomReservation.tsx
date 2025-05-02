@@ -11,7 +11,7 @@ export default function RoomReservation() {
       <div className="px-5 sm:px-10 md:px-20 py-5">
         <div className="flex flex-col sm:flex-row items-center gap-3 border-b-[1px] border-[#CFCFCF] pb-5">
           <p className="flex items-center gap-1 text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
-            <img src="../../public/assets/icons/date.png" alt="" />
+            <img src="src/assets/icons/date.png" alt="date.png" />
             <span>{new Date().toDateString()}</span>
           </p>
           <span className="text-[16px] sm:text-[18px] md:text-[20px] font-[500] hidden md:flex">|</span>
