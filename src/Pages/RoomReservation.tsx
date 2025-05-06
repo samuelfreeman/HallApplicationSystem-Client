@@ -16,7 +16,7 @@ export default function RoomReservation() {
           </p>
           <span className="text-[16px] sm:text-[18px] md:text-[20px] font-[500] hidden md:flex">|</span>
           <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
-            Reservation ID: <span>123456</span>
+            Reservation ID: <span>student.allocationId || "123456"</span>
           </p>
         </div>
 

@@ -5,8 +5,24 @@ import googleplay from '@/assets/icons/Google_Play.png'
 import { Link } from "react-router";
 import NavInfo from "../NavInfo.tsx";
 import Navbar from '../Navbar.tsx';
-
+import { api } from '@/api/interceptor.ts';
+import { useEffect } from "react";
 function Payment_Confirmation() {
+    useEffect(() => {
+        const reference = new URLSearchParams(window.location.search).get("reference");
+      
+        if (reference) {
+          api.post("/api/paystack/callback", { reference })
+            .then((res) => {
+              console.log("Verification result:", res.data);
+              // Show success or update DB/UI accordingly
+            })
+            .catch((err) => {
+              console.error("Verification error:", err);
+              alert("Transaction verification failed");
+            });
+        }
+      }, []);
     return (
         <>
            <Navbar/>
