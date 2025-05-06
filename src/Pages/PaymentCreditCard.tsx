@@ -7,7 +7,7 @@ import { useState } from "react";
 import { api } from "@/api/interceptor";
 
 export default function PaymentCreditCard() {
-  const navigate = useNavigate();
+  
   
   const handlePayWithCard = async () => {
     try {
