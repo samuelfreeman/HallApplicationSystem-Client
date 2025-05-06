@@ -7,7 +7,9 @@ import NavInfo from "../NavInfo.tsx";
 import Navbar from '../Navbar.tsx';
 import { api } from '@/api/interceptor.ts';
 import { useEffect } from "react";
+import { toast } from '@/hooks/use-toast.ts';
 function Payment_Confirmation() {
+    const student = JSON.parse(localStorage.getItem('student') || '{}');
     useEffect(() => {
         const reference = new URLSearchParams(window.location.search).get("reference");
       
@@ -15,10 +17,20 @@ function Payment_Confirmation() {
           api.post("/paystack/callback", { reference })
             .then((res) => {
               console.log("Verification result:", res.data);
+              toast({
+                title: "Transaction successful",
+                description: "Transaction was successful",
+                duration: 3000,
+            })
             })
             .catch((err) => {
               console.error("Verification error:", err);
-              alert("Transaction verification failed");
+              toast({
+                title: "Transaction failed",
+                description: "Transaction was not Verified",
+                variant:"destructive",
+                duration: 3000,
+            })
             });
         }
       }, []);
@@ -40,7 +52,7 @@ function Payment_Confirmation() {
 
                     <hr className="my-[20px] border-gray-200 border" />
 
-                    <p className="p-2.5">For all your payment details, check out the confirmation email we’re sending to <span className="font-semibold">ivy@gmail.com.</span>  </p>
+                    <p className="p-2.5">For all your payment details, check out the confirmation email we’re sending to <span className="font-semibold">{student.email||"student@gmail.com"}</span>  </p>
                 </div>
 
 

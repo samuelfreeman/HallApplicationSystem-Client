@@ -1,6 +1,6 @@
 import Navbar from "@/component/Navbar";
 import NavInfo from "@/component/NavInfo";
-import { Link } from "react-router";
+
 import { toast } from "@/hooks/use-toast.ts";
 
 import { useState } from "react";
@@ -45,17 +45,32 @@ export default function PaymentCreditCard() {
     }
   };
 
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'momo'>("card")
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'momo'>("momo")
   return (
     <>
       <Navbar />
       <NavInfo title="Payment Information" />
 
       <div className="lg:px-40 py-5 px-4">
+        
         <h1 className="text-[30px] font-[700] pt-4 pb-9">Payment Details</h1>
 
         {/* select card or momo */}
         <div className="flex items-center gap-3 lg:gap-16 pb-7">
+               {/* momo */}
+               <div
+            className={`cursor-pointer border-[1px] ${paymentMethod === 'momo' ? 'border-[#900633]' : 'border-[#CFCFCF]'} py-5 px-2 w-[170px] lg:w-[200px] h-[128px] rounded-sm`}
+            onClick={() => setPaymentMethod('momo')}
+          >
+            <input
+              type="radio"
+              name="payment"
+              checked={paymentMethod === 'momo'}
+              onChange={() => setPaymentMethod('momo')}
+              className="float-right -mt-3"
+            />
+            <p className="text-center text-[16px] py-2">Mobile Wallets</p>
+          </div>
           {/* credit card */}
           <div
             className={`cursor-pointer border-[1px] ${paymentMethod === 'card' ? 'border-[#900633]' : 'border-[#CFCFCF]'} py-5 px-2 w-[170px] lg:w-[200px] h-[128px] rounded-sm`}
@@ -71,20 +86,7 @@ export default function PaymentCreditCard() {
             <p className="text-center text-[16px] py-2">Debit/Credit Card</p>
           </div>
 
-          {/* momo */}
-          <div
-            className={`cursor-pointer border-[1px] ${paymentMethod === 'momo' ? 'border-[#900633]' : 'border-[#CFCFCF]'} py-5 px-2 w-[170px] lg:w-[200px] h-[128px] rounded-sm`}
-            onClick={() => setPaymentMethod('momo')}
-          >
-            <input
-              type="radio"
-              name="payment"
-              checked={paymentMethod === 'momo'}
-              onChange={() => setPaymentMethod('momo')}
-              className="float-right -mt-3"
-            />
-            <p className="text-center text-[16px] py-2">Mobile Wallets</p>
-          </div>
+     
         </div>
 
         {/* forms for credit card */}
@@ -92,64 +94,15 @@ export default function PaymentCreditCard() {
 
           <div className="">
             <h1 className="py-3 text-[30px] font-[700]">Card Details</h1>
-            <form action="">
-              {/* credit card number */}
-              <div className="flex flex-col gap-3">
-                <label htmlFor="cardNumber">CREDIT CARD NUMBER</label>
-                <input
-                  type="number"
-                  className="border-[1px] border-[#4A4A4A] w-full lg:w-[800px] h-[45px] rounded-[3px]"
-                  required
-                />
-              </div>
-
-              {/* Name of the credit card holder */}
-              <div className="flex flex-col gap-3 pt-7">
-                <label htmlFor="name">CARD HOLDER NAME</label>
-                <input
-                  type="text"
-                  className="border-[1px] border-[#4A4A4A] w-full md:w-[800px] h-[45px] rounded-[3px]"
-                  required
-                />
-              </div>
-
-              {/* validity period and the cvv */}
-              <div className="flex items-center gap-5">
-                <div className="flex flex-col gap-3 pt-7">
-                  <label htmlFor="name">VALIDITY PERIOD</label>
-                  <input
-                    type="text"
-                    className="border-[1px] border-[#4A4A4A] w-full md:w-[390px] h-[45px] rounded-[3px]"
-                    required
-                  />
-                </div>
-
-                <div className="flex flex-col gap-3 pt-7">
-                  <label htmlFor="name">CVV</label>
-                  <input
-                    type="text"
-                    className="border-[1px] border-[#4A4A4A] w-full md:w-[390px] h-[45px] rounded-[3px]"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center text-center py-5">
-                <Link to='/paymentConfirm'>
-                  <input
-                    type="submit"
-                    className="py-3 px-10 bg-[#900633] text-white text-[22px] rounded-lg cursor-pointer"
-                    value="Make Payment"
-                  />
-                </Link>
-              </div>
-            </form>
+            <h1>This is will be done the next time you visit i promise</h1>
+            
           </div>
         )}
 
         {paymentMethod === 'momo' && (
 
           <div className="">
+            
             <h1 className="py-3 text-[30px] font-[700]">
               Mobile Money Wallet Details
             </h1>

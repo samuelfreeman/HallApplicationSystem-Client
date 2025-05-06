@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
               <NavLink to="/complaint" className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Compliant Desk
               </NavLink>
-              <NavLink to="/applicantInfo" className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+              <NavLink to="/payment" className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Payment
               </NavLink>
               <NavLink to="/contact" className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
             Compliant Desk
           </NavLink>
           <NavLink 
-            to="/applicantInfo" 
+            to="/payment" 
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-50"
             onClick={() => setIsOpen(false)}
           >
