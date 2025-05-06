@@ -11,6 +11,12 @@ export const studentSignUp = async (data: CreateStudent) => {
     return response.data;
 }
 
+
+export const initializePaystack = async (data: { email: string; amount: number }) => {
+  const response = await api.post("/paystack/initialize", data);
+  return response.data;
+};
+
 export const studentAuth = async (params: FindStudent)=>{
     let str = params.id;  // Or '""Hello""'
 

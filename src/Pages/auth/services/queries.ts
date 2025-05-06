@@ -3,11 +3,45 @@ import { useNavigate } from "react-router-dom";
 import {
   studentAuth,
   studentLogin,
-  studentSignUp
+  studentSignUp,
+  initializePaystack
 } from "./api";
 import { toast } from "@/hooks/use-toast";
 import { useAuthTokenStore, useStudentName, useVerifyUser } from "@/store/use-auth-store";
 
+export const usePayWithCard = () => {
+  return useMutation({
+    mutationFn: initializePaystack,
+    onSuccess: (data) => {
+      const { authorization_url } = data;
+
+      if (authorization_url) {
+        window.location.href = authorization_url;
+        toast({
+          title: "Redirecting to Paystack",
+          description: "You are being redirected to complete your payment.",
+          duration: 4000,
+        });
+      } else {
+        toast({
+          title: "Failed to initialize payment",
+          description: "Paystack didn't return a valid URL.",
+          variant: "destructive",
+          duration: 4000,
+        });
+      }
+    },
+    onError: (error: any) => {
+      console.error("Init error:", error);
+      toast({
+        title: "Payment initialization failed",
+        description: "Unable to start the payment process.",
+        variant: "destructive",
+        duration: 4000,
+      });
+    },
+  });
+};
 export const useLoginUser = () => {
   const navigate = useNavigate();
   const { setId } = useVerifyUser();
