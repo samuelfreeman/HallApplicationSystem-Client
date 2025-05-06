@@ -12,7 +12,7 @@ function Payment_Confirmation() {
         const reference = new URLSearchParams(window.location.search).get("reference");
       
         if (reference) {
-          api.post("/api/paystack/callback", { reference })
+          api.get("/api/paystack/callback", { reference })
             .then((res) => {
               console.log("Verification result:", res.data);
               // Show success or update DB/UI accordingly
