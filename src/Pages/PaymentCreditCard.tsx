@@ -1,6 +1,6 @@
 import Navbar from "@/component/Navbar";
 import NavInfo from "@/component/NavInfo";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { toast } from "@/hooks/use-toast.ts";
 
 import { useState } from "react";
