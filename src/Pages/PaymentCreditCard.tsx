@@ -110,7 +110,7 @@ export default function PaymentCreditCard() {
               <div className="flex flex-col gap-3">
                 <label htmlFor="name">Name</label>
                 <input
-                  type="tel"
+                  type="text"
                   className="border-[1px] border-[#4A4A4A] w-full md:w-[800px] h-[45px] rounded-[3px]"
                   required
                 />
@@ -119,7 +119,7 @@ export default function PaymentCreditCard() {
               <div className="flex flex-col gap-3 pt-5">
                 <label htmlFor="momo">MOBILE MONEY NUMBER</label>
                 <input
-                  type="number"
+                  type="tel"
                   className="border-[1px] border-[#4A4A4A] w-full md:w-[800px] h-[45px] rounded-[3px]"
                   required
                 />
