@@ -17,6 +17,7 @@ import Payment_Confirmation from './component/Payment_Confirmation/Payment_Confi
 import Complaint from './component/Complaint/Complaint'
 import Contact from './component/Contact/Contact'
 import About from './Pages/About'
+import Chat from './Pages/Chat'
 
 
 const App: React.FC = () => {
@@ -33,7 +34,7 @@ const App: React.FC = () => {
         <Route path='/reservation' element={<Instruction/>}/>
         <Route path='/applicantInfo' element={<AppsInfo/>}/>
         <Route path='/bookroom' element={<BookRoom/>}/>
-        
+        <Route path= '/chat' element  ={<Chat/>}/>
         <Route path='/reservationconfirm' element={<ReservationConfirm/>}/>
         <Route path='/payment' element={<PaymentCreditCard/>}/>
         <Route path='/later' element={<RoomReservation/>}/>
