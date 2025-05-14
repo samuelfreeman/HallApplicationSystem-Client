@@ -14,7 +14,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { MoreVertical } from 'lucide-react'
 
 
-const socket = io('http://localhost:3000', {
+const socket = io('https://hallapplicationsystem.onrender.com/', {
   transports: ['websocket'],
 })
 
