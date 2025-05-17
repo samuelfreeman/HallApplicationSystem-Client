@@ -37,56 +37,46 @@ const GlobalChat = () => {
   // 
   // globalMembers
   useEffect(() => {
-    const storedStudent = JSON.parse(localStorage.getItem('student') || '{}')
-    setStudent(storedStudent)
-
-    if (storedStudent?.roomId) {
-      socket.emit('globalGetChats')
-    }
-
-    socket.on('globalAllChats', (data) => {
-      setChats(data)
-    })
-
-    socket.on('globalChatCreated', (newChat) => {
+    const storedStudent = JSON.parse(localStorage.getItem('student') || '{}');
+    setStudent(storedStudent);
+  
+    // Fetch initial data
+    socket.emit('globalGetChats');
+    socket.emit('globalListMembers');
+  
+    // Set up socket listeners
+    const handleNewChat = (newChat:any) => {
       if (!newChat.global) {
-        newChat.senderName = student?.fullName
-        setChats((prev) => [newChat, ...prev])
+        // Use storedStudent directly since student state might not be updated yet
+        newChat.senderName = storedStudent?.fullName;
+        setChats(prev => [...prev, newChat]); // Add new messages to the end
       }
-    })
-
+    };
+  
+    socket.on('globalAllChats', setChats);
+    socket.on('globalChatCreated', handleNewChat);
     socket.on('chatUpdated', (updatedChat) => {
-      setChats((prev) =>
-        prev.map((chat) =>
-          chat.id === updatedChat.id
-            ? { ...chat, ...updatedChat, student: chat.student } // preserve student
-            : chat
-        )
-      )
-    })
-    
-
+      setChats(prev => prev.map(chat => 
+        chat.id === updatedChat.id ? {...chat, ...updatedChat} : chat
+      ));
+    });
     socket.on('chatDeleted', (chatId) => {
-      setChats((prev) => prev.filter((chat) => chat.id !== chatId))
-    })
-
-    if (storedStudent?.roomId) {
-      socket.emit('globalListMembers')
-    }
-
-    socket.on('globalMembers', (data) => {
-      setMembers(data)
-    })
-
-
+      setChats(prev => prev.filter(chat => chat.id !== chatId));
+    });
+    socket.on('globalMembers', setMembers);
+  
     return () => {
-      socket.off('globalAllChats')
-      socket.off('globalChatCreated')
-      socket.off('chatUpdated')
-      socket.off('chatDeleted')
-    }
-  }, [])
-
+      socket.off('globalAllChats');
+      socket.off('globalChatCreated', handleNewChat);
+      socket.off('chatUpdated');
+      socket.off('chatDeleted');
+      socket.off('globalMembers');
+    };
+  }, []); // Empty dependency array since we're using storedStudent directly
+  
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [chats]);
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [chats])
@@ -100,6 +90,9 @@ const GlobalChat = () => {
     }
 
     socket.emit('globalCreateChat', chatPayload)
+    socket.emit('globalGetChats');
+    socket.on('globalAllChats', setChats);
+    console.log(chats)
     setMessage('')
   }
 

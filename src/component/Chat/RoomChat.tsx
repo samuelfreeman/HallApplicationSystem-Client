@@ -70,7 +70,7 @@ const RoomChat = () => {
 
 
     return () => {
-      socket.off('roomChats')
+      
       socket.off('chatCreated')
       socket.off('chatUpdated')
       socket.off('chatDeleted')
