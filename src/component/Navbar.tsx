@@ -163,8 +163,8 @@ const Navbar: React.FC = () => {
             chat
           </NavLink>
           {showRegister && (
-            <div className="px-3 py-2 space-y-2">
-              <NavLink to="/signup" onClick={() => setIsOpen(false)}><Button className="w-full bg-black text-white hover:bg-gray-800">
+            <div className="px-3 py-2 ">
+              <NavLink to="/signup" onClick={() => setIsOpen(false)}><Button className="w-full bg-black text-white hover:bg-gray-800 mb-2">
                 Register
               </Button>
               </NavLink>
