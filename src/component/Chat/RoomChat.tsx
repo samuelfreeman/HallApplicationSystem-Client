@@ -44,6 +44,7 @@ const RoomChat = () => {
     })
 
     socket.on('chatCreated', (newChat) => {
+      console.log(newChat)
       if (!newChat.global) {
         newChat.senderName = student?.fullName
         setChats((prev) => [newChat, ...prev])
@@ -78,8 +79,15 @@ const RoomChat = () => {
   }, [])
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [chats])
+   const timer = setTimeout(() => {
+    bottomRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+    });
+  }, 100);
+
+  return () => clearTimeout(timer);
+  }, [chats]);
 
   const handleSendMessage = () => {
     if (!message.trim() || !student?.studentId) return
@@ -90,6 +98,7 @@ const RoomChat = () => {
       global: false,
     }
 
+    
     socket.emit('createChat', chatPayload)
     setMessage('')
   }
@@ -99,6 +108,7 @@ const RoomChat = () => {
     setSelectedMember(member);
     setIsDialogOpen(true);
   };
+
   const handleDelete = (id: string) => {
     socket.emit('deleteChat', { id: id })
   }
@@ -115,8 +125,7 @@ const RoomChat = () => {
   }
 
   return (
-    <div className="p-4 max-w-xl mx-auto">
-      <div className='flex justify-between'>
+  <div className="p-4 max-w-4xl mx-auto"> {/* Changed from max-w-xl to max-w-4xl */}      <div className='flex justify-between'>
 
         <h2 className="text-xl font-bold mb-4">Room Chat</h2>
         {/* list members */}
@@ -166,7 +175,8 @@ const RoomChat = () => {
           <p className="text-sm text-gray-500">No chats available for this room.</p>
         ) : (
           [...chats].reverse().map((chat, index) => {
-            const isOwner = chat.senderName === student?.fullName
+
+            const isOwner = chat.senderName=== student?.fullName
             const isEditing = editingId === chat.id
 
             return (
@@ -215,7 +225,7 @@ const RoomChat = () => {
             )
           })
         )}
-
+<div ref={bottomRef}></div>
       </div>
 
       <div className="flex gap-2">
