@@ -46,6 +46,13 @@ const SignUpForm: React.FC = () => {
         resolver: zodResolver(signUpSchema),
 
         defaultValues: {
+            studentId: "",
+            fullName: "",
+            email: "",
+            password: "",
+            gender: "",
+            level: 100,
+            telephone: "",
             department: "Computer Science",
         },
 
@@ -56,12 +63,13 @@ const SignUpForm: React.FC = () => {
             await CreateStudent({ data: values })
             console.log(values)
         } catch (error) {
+             form.reset();
+            form.setError("root", {
+                type: "manual",
+                message: "Submission failed. Please check your inputs and try again."
+            });
             console.error("Form submission error", error);
-        } finally {
-            form.reset();
-        }
-
-
+        }  
     }
 
 
