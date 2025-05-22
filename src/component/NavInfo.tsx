@@ -22,9 +22,14 @@ export default function NavInfo(probs: any) {
   }, []);
   useEffect(() => {
     // Automatically fetch student data as soon as the component mounts
-    const studentId = localStorage.getItem("id") || "null"; // Replace this with the actual student ID (maybe from route params or context)
-    fetchStudent({ data: { id: studentId } });
+  if (!token || token === undefined) {
+    navigate("/login")
+  }else{
+        const studentId = localStorage.getItem("id") || "null"; // Replace this with the actual student ID (maybe from route params or context)
+        fetchStudent({ data: { id: studentId } });
+  }
   }, [fetchStudent]); // Empty dependency array means it runs once when the component mounts
+
 
   if (isLoading) {
     return <section className="bg-[#900633] print:hidden  px-2 lg:px-10 lg:py-1 flex items-center gap-8 py-3 lg:justify-between mt-16 h-[10vh]">
