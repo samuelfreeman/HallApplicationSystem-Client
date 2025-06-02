@@ -14,10 +14,7 @@ export default function RoomReservation() {
             <img src="/date.png" alt="date.png" />
             <span>{new Date().toDateString()}</span>
           </p>
-          <span className="text-[16px] sm:text-[18px] md:text-[20px] font-[500] hidden md:flex">|</span>
-          <p className="text-[16px] sm:text-[18px] md:text-[20px] font-[500]">
-            Reservation ID: <span>student.allocationId || "123456"</span>
-          </p>
+
         </div>
 
         <h1 className="text-[18px] sm:text-[20px] font-[600] pt-4 pb-12">Applicant Information</h1>
@@ -29,7 +26,7 @@ export default function RoomReservation() {
             <p>Email Address: <span>{student.email}</span></p>
           </div>
           <div className="text-[16px] sm:text-[18px] md:text-[20px]">
-            <p>Reservation ID: <span>123456789</span></p>
+          
             <p className="py-4">Gender: <span>{student.gender}</span></p>
             <p>Phone number: <span>{student.telephone}</span></p>
           </div>
