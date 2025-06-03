@@ -21,7 +21,7 @@ const About = () => {
       </div>
 
       {/* Right image */}
-      <div className="flex-1 max-w-lg mb-10 md:mb-0 flex justify-center">
+      <div className="flex-1 mt-10 md:mt-0 max-w-lg mb-10 md:mb-0 flex justify-center">
         <img
           src="https://media.giphy.com/media/YQMh5vtGdungUT6Fde/giphy.gif?cid=ecf05e47bx73utosyn1qnsqxjll9k52c1gfvqn38qf3czbim&ep=v1_gifs_search&rid=giphy.gif&ct=g"
           alt="Student Data Management"
