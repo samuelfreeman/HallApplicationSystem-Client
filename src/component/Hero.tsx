@@ -1,81 +1,73 @@
 import { Typewriter } from "react-simple-typewriter";
-// import { Button } from "../assets/icons";
-// import { NavLink } from "react-router";
+
+const features = [
+  {
+    icon: "/mdi_guest-room-outline.png",
+    title: "Effortless Room Booking",
+    description: "Quickly find and secure your preferred room in a few easy steps.",
+  },
+  {
+    icon: "/arcticons_sob-smart.png",
+    title: "Seamless Management",
+    description: "Admins manage room allocations and requests effortlessly.",
+  },
+  {
+    icon: "/Vector.png",
+    title: "Innovative Student Living",
+    description: "Smart living designed to fit students' academic and lifestyle needs.",
+  },
+];
+
 const Hero = () => {
   return (
-    <div className="flex items-center justify-center w-full mt-16 overflow-x-hidden hero">
-      <div className="bg-black relative w-full h-full pb-5 opacity-80 ">
-        {/* Content */}
-        <div className="flex flex-col justify-center text-center text-white gap-7 px-4 sm:px-6 lg:px-8">
-          <h1 className = "text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold block pt-8  "> Welcome To Autonomy Hall Application </h1>
+    <section className="relative w-full bg-black text-white pt-24 pb-16 px-4 sm:px-8 md:px-16 overflow-x-hidden hero">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-80 z-0" />
 
-          <h5 className="pt-8  text-center">
-            <span className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-bold block">
-              <Typewriter
-                words={[
-                  "Welcome to Seamless Hall Living",
-                  "Find Your Perfect Room.",
-                  "Hassle-Free Registration.",
-                  "Book. Pay. Stay.",
-                ]}
-                loop={false}
-                cursor
-                cursorStyle="_"
-                typeSpeed={90}
-                deleteSpeed={70}
-                delaySpeed={1000}
-              />
-            </span>
-          </h5>
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center text-center gap-8 max-w-5xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Welcome to Autonomy Hall Application
+        </h1>
 
-          {/* <h1 className="pt-44 ">Delivering Excellence Through Simplicity</h1> */}
-        </div>
-        {/* <div className=" relative flex  space-x-2  mt-6 justify-end lg:pr-20 lg:pt-10  ml-10 mr-10  ">
-          <Button className="text-white outline-1 outline">
-            <NavLink to={"/comingsoon"}>Get started</NavLink>
-          </Button>
-          <Button className="text-black bg-white">
-            {" "}
-            <NavLink to="#about">Learn More</NavLink>
-          </Button>
-        </div> */}
-        {/* Feature Cards */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-5 md:gap-8 lg:gap-20 mt-8 sm:mt-12 md:mt-20 lg:mt-32 px-4 sm:px-6 lg:px-8">
-          {/* Card 1 */}
-          <div className="flex flex-col items-center justify-center gap-2 sm:gap-4 bg-[#0D0F0BB2] rounded-[25px] w-full max-w-[250px] sm:max-w-[280px] md:max-w-[298px] min-h-[160px] sm:min-h-[185px] p-3 sm:p-4 md:p-6">
-            <img
-              src="/mdi_guest-room-outline.png"
-              alt="Room icon"
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-            />
-            <h2 className="text-white text-sm sm:text-base md:text-lg font-bold text-center">Effortless Room Booking</h2>
-            <p className="text-white text-xs sm:text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="flex flex-col items-center justify-center gap-2 sm:gap-4 bg-[#0D0F0BB2] rounded-[25px] w-full max-w-[250px] sm:max-w-[280px] md:max-w-[298px] min-h-[160px] sm:min-h-[185px] p-3 sm:p-4 md:p-6">
-            <img
-              src="/arcticons_sob-smart.png"
-              alt="Management icon"
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-            />
-            <h2 className="text-white text-sm sm:text-base md:text-lg font-bold text-center">Seamless Management</h2>
-            <p className="text-white text-xs sm:text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="flex flex-col items-center justify-center gap-2 sm:gap-4 bg-[#0D0F0BB2] rounded-[25px] w-full max-w-[250px] sm:max-w-[280px] md:max-w-[298px] min-h-[160px] sm:min-h-[185px] p-3 sm:p-4 md:p-6">
-            <img
-              src="/Vector.png"
-              alt="Innovation icon"
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-            />
-            <h2 className="text-white text-sm sm:text-base md:text-lg font-bold text-center">Innovative Students Living</h2>
-            <p className="text-white text-xs sm:text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-          </div>
-        </div>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-foreground">
+          <Typewriter
+            words={[
+              "Welcome to Seamless Hall Living",
+              "Find Your Perfect Room.",
+              "Hassle-Free Registration.",
+              "Book. Pay. Stay.",
+            ]}
+            loop={false}
+            cursor
+            cursorStyle="_"
+            typeSpeed={90}
+            deleteSpeed={70}
+            delaySpeed={1000}
+          />
+        </h2>
       </div>
-    </div>
+
+      {/* Features */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto px-4">
+        {features.map((feature, i) => (
+          <div
+            key={i}
+            className="bg-white/5 border border-white/10 backdrop-blur rounded-2xl p-6 flex flex-col items-center text-center transition hover:scale-[1.03] shadow-md"
+          >
+            <img
+              src={feature.icon}
+              alt={feature.title}
+              className="w-12 h-12 mb-4 object-contain"
+            />
+            <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+            <p className="text-sm text-muted-foreground">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

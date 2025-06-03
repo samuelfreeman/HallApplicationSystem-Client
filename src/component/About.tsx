@@ -1,23 +1,35 @@
 const About = () => {
-    return (
-        <section className="flex flex-col-reverse md:flex-row-reverse items-center justify-center w-full min-h-[100vh] py-12 md:py-40 px-4 sm:px-6 lg:px-8 overflow-x-hidden" id="about">
-            <div className="flex-1 w-full max-w-2xl">
-                <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800 text-center mb-6 md:mb-8">About Us</h1>
-                <div className="space-y-4 md:space-y-6">
-                    <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-700 leading-relaxed">
-                        "We make student hall living simpler by automating room requests, payments, and allocations, ensuring a seamless and stress-free experience for both students and administrators. Our platform empowers students to easily select and request their preferred rooms, track their payment statuses, and stay updated on important notifications."
-                    </p>
-                    <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-700 leading-relaxed">
-                        "For administrators, it provides powerful tools to manage room availability, allocate spaces efficiently, and monitor analytics in real-time. Whether you're a new student looking to secure your first room or a returning resident managing ongoing payments, our system is designed to save you time, reduce errors, and enhance transparency. Experience hassle-free hall management with just a few clicks."
-                    </p>
-                </div>
-            </div>
+  return (
+    <section
+      id="about"
+      className="bg-secondary_background py-20 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between min-h-[90vh] overflow-x-hidden"
+    >
+      {/* Left content */}
+      <div className="flex-1 max-w-xl text-center md:text-left space-y-8">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#900633]">
+          About Us
+        </h2>
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          We simplify student hall living by automating room requests, payments, and allocations, ensuring a seamless experience for both students and administrators.
+        </p>
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          Our platform empowers students to easily select and request their preferred rooms, track payment statuses, and stay updated on important notifications.
+        </p>
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          For administrators, it provides tools to manage room availability, allocate spaces efficiently, and monitor analytics in real-time.
+        </p>
+      </div>
 
-            <div className="flex-1 w-full max-w-md mb-8 md:mb-0">
-            <img src="/About us page.gif" alt="" />
-            </div>
-        </section>
-    )
-}
+      {/* Right image */}
+      <div className="flex-1 max-w-lg mb-10 md:mb-0 flex justify-center">
+        <img
+          src="https://media.giphy.com/media/YQMh5vtGdungUT6Fde/giphy.gif?cid=ecf05e47bx73utosyn1qnsqxjll9k52c1gfvqn38qf3czbim&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+          alt="Student Data Management"
+          className="rounded-xl shadow-lg max-w-full h-auto"
+        />
+      </div>
+    </section>
+  );
+};
 
-export default About
+export default About;

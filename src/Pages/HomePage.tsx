@@ -4,6 +4,10 @@ import Hero from "../component/Hero";
 import About from "../component/About";
 import HowItWorks from "@/component/Home_components/HowItWorks";
 import Footer from "@/component/Footer";
+
+
+import WhyChooseUs from "@/component/HIW";
+import Testimonials from "@/component/Testimonials";
 // import ContactUsForm from "../component/ContactUs";
 // import Testimonials from "../component/Testimonials";
 // import FAQ from "../component/FAQ";
@@ -14,10 +18,12 @@ const HomePage = () => {
       <Navbar />
       <main className="">
         <Hero />
-        <HowItWorks/>
+        <HowItWorks />
+      <Testimonials/>
+        <WhyChooseUs />
         <About />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className=" print:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 w-screen">
+    <nav className=" print:hidden fixed top-0 left-0 right-0 z-50 bg-secondary_background border-b border-gray-200 w-screen">
       <div className="w-full">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-5">
           <div className="flex items-center flex-1">

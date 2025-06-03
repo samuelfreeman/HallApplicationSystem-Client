@@ -1,68 +1,61 @@
-import React from "react";
-
-
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-
-
-
-interface Testimonial {
-  name: string;
-  feedback: string;
-  image: string;
-}
-
-const testimonials: Testimonial[] = [
-  { name: "Kwame Doe", feedback: "The room allocation process was seamless!", image: "/user(1).png" },
-  { name: "Mike Asamoah", feedback: "Managing payments has never been easier.", image: "/user(1).png" },
-  { name: "Alex Boateng", feedback: "A reliable system that saves time and stress.", image: "/user(1).png" },
+// components/Home_components/Testimonials.tsx
+const testimonials = [
+  {
+    name: "Ama K.",
+    role: "Student",
+    avatar:
+      "https://randomuser.me/api/portraits/women/68.jpg",
+    feedback:
+      "The hall management system made my room request and payment process so easy and hassle-free. I got updates in real-time and the support was fantastic!",
+  },
+  {
+    name: "Kwame B.",
+    role: "Administrator",
+    avatar:
+      "https://randomuser.me/api/portraits/men/75.jpg",
+    feedback:
+      "Managing room allocations and payments has never been simpler. The analytics tools help us optimize availability and reduce errors drastically.",
+  },
+  {
+    name: "Esi A.",
+    role: "Student",
+    avatar:
+      "https://randomuser.me/api/portraits/women/65.jpg",
+    feedback:
+      "A user-friendly platform that truly understands student needs. I feel confident knowing everything is transparent and efficient.",
+  },
 ];
 
-const Testimonials: React.FC = () => {
-
-
+export default function Testimonials() {
   return (
-    <section className="bg-gray-100 py-12 px-6 flex flex-col">
-      <h2 className="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
-      <div className="relative max-w-[90%] mx-auto">
+    <section className="bg-[#F5F5F5] py-20 px-6 md:px-12  mx-auto text-center">
+      <h2 className="text-4xl font-extrabold text-[#900633] mb-12 tracking-wide">
+        What Our Users Say
+      </h2>
 
+      <div className="flex flex-col md:flex-row justify-center gap-10">
+        {testimonials.map(({ name, role, avatar, feedback }, i) => (
+          <div
+            key={i}
+            className="bg-white rounded-2xl shadow-lg p-8 max-w-md mx-auto transform hover:scale-105 transition-transform duration-300"
+          >
+            <p className="text-gray-800 text-lg italic mb-6">“{feedback}”</p>
 
-        <Carousel className="w-full max-w-xs" opts={{
-          align: "start",
-          loop: true,
-        }}>
-          <CarouselContent>
-            {testimonials.map((message, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex flex-col p-10 gap-4 items-center justify-center ">
-                      <img src={message.image} alt={message.name} className="w-16 h-16 rounded-full" />
-                      <span className="text-xl text-center font-semibold">{message.feedback}</span>
-                      <span className="text-gray-600">- {message.name}</span>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-
+            <div className="flex items-center justify-center gap-4">
+              <img
+                src={avatar}
+                alt={`${name} avatar`}
+                className="w-16 h-16 rounded-full object-cover border-4 border-[#900633]"
+                loading="lazy"
+              />
+              <div className="text-left">
+                <p className="font-semibold text-[#900633] text-xl">{name}</p>
+                <p className="text-gray-500 text-sm">{role}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
-
-
-
     </section>
   );
-};
-
-export default Testimonials;
+}
